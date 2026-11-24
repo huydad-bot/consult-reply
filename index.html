@@ -1989,7 +1989,7 @@ function getQ(){return document.getElementById('q').value.trim().toLowerCase()}
 /* ============================== TABS ============================== */
 function renderTabs(){
   const items=allItems();
-  let h=`<button class="tab emg ${curCat==='emg'?'on':''}" onclick="setCat('emg')"><span class="ic">!</span>내분비 응급 프로토콜<span class="n">${PROTOS.length}</span></button><span class="sep"></span>`;
+  let h=`<button class="tab emg ${curCat==='emg'?'on':''}" onclick="setCat('emg')"><span class="ic">!</span>내분비 응급<span class="n">${PROTOS.length}</span></button><span class="sep"></span>`;
   CATS.forEach(c=>{const n=items.filter(i=>i.cat===c.id).length; if(c.id==='custom'&&!n)return;
     h+=`<button class="tab ${curCat===c.id?'on':''}" style="--c:${c.color}" onclick="setCat('${c.id}')"><span class="dot"></span>${c.name}<span class="n">${n}</span></button>`});
   document.getElementById('tabs').innerHTML=h;
