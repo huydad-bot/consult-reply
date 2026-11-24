@@ -270,25 +270,25 @@ dm:`<h3>빠른 계산 — 입원 중 인슐린 시작 용량</h3>
 <div class="calc">
  <label>체중(kg)<input type="number" id="wt" value="60" oninput="calcIns()"></label>
  <label>TDD 계수<select id="fac" onchange="calcIns()">
-  <option value="0.2">0.2 U/kg (고령·CKD·저체중)</option>
-  <option value="0.3">0.3 U/kg (인슐린 미사용, 경증)</option>
-  <option value="0.4" selected>0.4 U/kg (일반)</option>
-  <option value="0.5">0.5 U/kg (고혈당 심함·비만)</option></select></label>
+  <option value="0.2">0.2 units/kg (고령·CKD·저체중)</option>
+  <option value="0.3">0.3 units/kg (인슐린 미사용, 경증)</option>
+  <option value="0.4" selected>0.4 units/kg (일반)</option>
+  <option value="0.5">0.5 units/kg (고혈당 심함·비만)</option></select></label>
  <div class="out" id="insOut"></div>
 </div>
 <div class="calc">
  <label>아침 prednisolone(mg)<input type="number" id="pd" value="30" oninput="calcIns()"></label>
  <div class="out" id="npOut"></div>
 </div>
-<div style="font-size:.8rem;color:var(--muted)">스테로이드 NPH: 0.1 U/kg per 10 mg prednisolone (최대 0.4 U/kg, prednisolone ≥40 mg). 기존 인슐린 사용자는 기존 용량에 추가. 환산: prednisolone 5 mg = methylprednisolone 4 mg = dexamethasone 0.75 mg = hydrocortisone 20 mg.</div>`,
-ad:`<h3>부신기능저하증 — 수술·급성질환 시 hydrocortisone(HC) 용량</h3>
+<div style="font-size:.8rem;color:var(--muted)">스테로이드 NPH: 0.1 units/kg per 10 mg prednisolone (최대 0.4 units/kg, prednisolone ≥40 mg). 기존 인슐린 사용자는 기존 용량에 추가. 환산: prednisolone 5 mg = methylprednisolone 4 mg = dexamethasone 0.75 mg = hydrocortisone 20 mg.</div>`,
+ad:`<h3>부신기능저하증 — 수술·급성질환 시 hydrocortisone(hydrocortisone) 용량</h3>
 <table><tr><th>상황</th><th>권장</th></tr>
 <tr><td>경미한 시술 (국소마취 치과·피부, 진단 내시경)</td><td>평소 용량 유지; 침습 정도에 따라 당일 경구 용량 2배</td></tr>
-<tr><td>전신마취·중등도~대수술, 분만</td><td>마취 유도 시 HC 100 mg IV → 200 mg/24h 지속 정주 (또는 50 mg IV/IM q6h), 금식·스트레스 지속 동안 유지<br>경구 재개 후 평소 용량의 2배 48h(대수술은 최대 1주) → 평소 용량</td></tr>
+<tr><td>전신마취·중등도~대수술, 분만</td><td>마취 유도 시 hydrocortisone 100 mg IV (3–5분에 걸쳐) → 200 mg/24h 지속 정주 (또는 50 mg IV q6h (각 3–5분에 걸쳐)), 금식·스트레스 지속 동안 유지<br>경구 재개 후 평소 용량의 2배 48h(대수술은 최대 1주) → 평소 용량</td></tr>
 <tr><td>발열·감염 (경구 가능)</td><td>>38℃ 2배, ≥39℃ 3배 — 회복까지 (보통 2–3일)</td></tr>
-<tr><td>구토·설사로 복용 불가</td><td>HC 100 mg IM/IV 후 응급실/입원</td></tr>
-<tr><td>부신위기</td><td>HC 100 mg IV bolus → 200 mg/24h; NS 1 L 첫 1시간; 저혈당 교정</td></tr>
-</table><div style="font-size:.8rem;color:var(--muted);margin-top:4px">HC ≥50 mg/일 투여 중에는 fludrocortisone 생략 가능(경구 재개 시 함께 재개). 외인성 스테로이드 장기 사용자(prednisolone ≥5 mg/일 ≥4주)도 HPA 억제 가능성 있어 동일 원칙 적용.</div>`,
+<tr><td>구토·설사로 복용 불가</td><td>hydrocortisone 100 mg IV (3–5분에 걸쳐; 정맥로 없으면 IM) 후 응급실/입원</td></tr>
+<tr><td>부신위기</td><td>hydrocortisone 100 mg IV bolus (3–5분에 걸쳐) → 200 mg/24h 지속 정주; NS 1 L 첫 1시간; 저혈당 교정</td></tr>
+</table><div style="font-size:.8rem;color:var(--muted);margin-top:4px">hydrocortisone ≥50 mg/일 투여 중에는 fludrocortisone 생략 가능(경구 재개 시 함께 재개). 외인성 스테로이드 장기 사용자(prednisolone ≥5 mg/일 ≥4주)도 HPA 억제 가능성 있어 동일 원칙 적용.</div>`,
 op:`<h3>골다공증 약제별 침습적 치과 시술(발치·임플란트) 요약</h3>
 <table><tr><th>약제</th><th>MRONJ</th><th>시술 전후 권장</th></tr>
 <tr><td>경구 BP (alendronate, risedronate, ibandronate)</td><td>매우 낮음</td><td>&lt;4년·위험인자 없음: 휴약 없이 시술<br>≥4년 또는 스테로이드·당뇨·흡연 등: 골절위험 허용 시 시술 전 2개월 휴약 고려, 골치유 후 재개</td></tr>
@@ -320,8 +320,8 @@ pit:`<h3>뇌하수체 수술 후 체크포인트</h3>
 <table><tr><th>항목</th><th>기준 / 조치</th></tr>
 <tr><td>중추성 요붕증</td><td>소변량 &gt;250–300 mL/h 2–3시간 연속 (또는 &gt;3 L/일) + 요 삼투압 &lt;300 mOsm/kg (요비중 &lt;1.005) + 혈청 Na 상승(&gt;145) → desmopressin 필요 시(PRN) 투여</td></tr>
 <tr><td>지연성 저나트륨혈증</td><td>수술 후 5–10일째 (삼상 반응의 SIADH기) — 퇴원 후 POD 7 전후 Na 확인</td></tr>
-<tr><td>아침 cortisol (POD 1–3, 스테로이드 미투여 시)</td><td>≥15 µg/dL 충분 · &lt;5 µg/dL 결핍 → HC 시작 · 그 사이 → 생리적 용량 HC 유지 후 6–12주 재평가 (측정법별 차이 있음)</td></tr>
-<tr><td>쿠싱병</td><td>수술 후 cortisol &lt;5 µg/dL(특히 &lt;2) → 관해 시사, HC 보충 필요</td></tr>
+<tr><td>아침 cortisol (POD 1–3, 스테로이드 미투여 시)</td><td>≥15 mcg/dL 충분 · &lt;5 mcg/dL 결핍 → hydrocortisone 시작 · 그 사이 → 생리적 용량 hydrocortisone 유지 후 6–12주 재평가 (측정법별 차이 있음)</td></tr>
+<tr><td>쿠싱병</td><td>수술 후 cortisol &lt;5 mcg/dL(특히 &lt;2) → 관해 시사, hydrocortisone 보충 필요</td></tr>
 <tr><td>말단비대증</td><td>POD 1 GH &lt;1 ng/mL → 관해 예측, IGF-1은 12주 후</td></tr>
 <tr><td>전체 재평가</td><td>수술 6–12주 후 뇌하수체 기능 전반, MRI 3개월</td></tr></table>`,
 el:`<h3>빠른 계산 — 저나트륨혈증 수액 1 L 투여 시 예상 Na 변화 (Adrogué–Madias)</h3>
@@ -336,8 +336,8 @@ el:`<h3>빠른 계산 — 저나트륨혈증 수액 1 L 투여 시 예상 Na 변
 <h3 style="margin-top:12px">고칼륨혈증 응급 처치 요약 (UKKA 2023)</h3>
 <table><tr><th>단계</th><th>약제</th><th>발현 / 비고</th></tr>
 <tr><td>심근 보호 (K ≥6.5 또는 ECG 변화)</td><td>10% calcium gluconate 30 mL IV 10분</td><td>수분 내, 30–60분 지속 · ECG 변화 지속 시 반복</td></tr>
-<tr><td>세포내 이동</td><td>Regular insulin 10 U + glucose 25 g IV 15분<br>Salbutamol 10–20 mg nebulizer (보조)</td><td>15–30분 · 투여 전 혈당 &lt;126 mg/dL이면 D10W 50 mL/h 5시간 · 혈당 매시간 6시간</td></tr>
-<tr><td>체외 제거</td><td>Sodium zirconium cyclosilicate 10 g tid (≤72h)<br>Patiromer 8.4 g qd / Calcium polystyrene sulfonate 15–30 g</td><td>1–4시간 이후 · 이뇨제(체액 과다 시) · 불응·AKI 시 투석</td></tr>
+<tr><td>세포내 이동</td><td>Regular insulin 10 units + glucose 25 g IV 15분<br>Salbutamol 10–20 mg nebulizer (보조)</td><td>15–30분 · 투여 전 혈당 &lt;126 mg/dL이면 D10W 50 mL/h 5시간 · 혈당 매시간 6시간</td></tr>
+<tr><td>체외 제거</td><td>Sodium zirconium cyclosilicate 10 g tid (≤72h)<br>Patiromer 8.4 g 1일 1회 / Calcium polystyrene sulfonate 15–30 g</td><td>1–4시간 이후 · 이뇨제(체액 과다 시) · 불응·AKI 시 투석</td></tr>
 <tr><td>추적</td><td>K 1, 2, 4, 6, 24시간</td><td>원인 약제 중단·조정</td></tr></table>`,
 th:``,custom:``
 };
@@ -364,10 +364,10 @@ reply:`상기 환자 제2형 당뇨병 (HbA1c ___%, 현재 투약: ___________) 
 1. 수술 전후 목표 혈당 100–180 mg/dL.
 2. 금식 중 혈당 q4–6h, 수술 중 q1–2h 측정.
 3. 혈당 >180 mg/dL 지속 시 아래 correction scale 적용, 수술 중/중환자는 지속 정주 인슐린 고려.
-4. 혈당 <70 mg/dL 시 D50W 20–50 mL IV 후 15분 뒤 재측정, 다음 인슐린 용량 10–20% 감량.
+4. 혈당 <70 mg/dL 시 D50W 20–50 mL IV (큰 정맥, 2–5분에 걸쳐 서서히) 후 15분 뒤 재측정, 다음 인슐린 용량 10–20% 감량.
 
 [Correction scale — rapid-acting insulin SC, 식전 또는 금식 시 q4–6h]
-   151–200: 2 U / 201–250: 4 U / 251–300: 6 U / 301–350: 8 U / >350: 10 U 및 notify
+   151–200: 2 units / 201–250: 4 units / 251–300: 6 units / 301–350: 8 units / >350: 10 units 및 notify
    (고령, CKD, 인슐린 감수성 높은 경우 절반 용량)
 
 [수술 후]
@@ -383,21 +383,21 @@ reply:`상기 환자 입원 중 고혈당으로 의뢰 주셨습니다. (체중 
 
 1. HbA1c 최근 3개월 내 결과 없으면 검사 부탁드립니다.
 2. 경구 혈당강하제는 입원 중 일시 중단하고 인슐린으로 조절하겠습니다.
-3. 인슐린 처방 (총 일일 용량 TDD = 체중 × 0.4 U/kg = ___ U)
-   - 기저: insulin glargine ___ U SC 1일 1회 (TDD의 50%, 매일 같은 시간)
-   - 식사: insulin lispro/aspart ___ U SC 매 식전 (TDD의 50%를 3회 분할)
+3. 인슐린 처방 (총 일일 용량 TDD = 체중 × 0.4 units/kg = ___ units)
+   - 기저: insulin glargine ___ units SC 1일 1회 (TDD의 50%, 매일 같은 시간)
+   - 식사: insulin lispro/aspart ___ units SC 매 식전 (TDD의 50%를 3회 분할)
      ※ 식사량 50% 미만 시 해당 식사 인슐린 절반, 금식 시 보류
    - 보정: 식전 혈당에 따라 correction scale 추가
-     151–200: 2 U / 201–250: 4 U / 251–300: 6 U / 301–350: 8 U / >350: 10 U 및 notify
+     151–200: 2 units / 201–250: 4 units / 251–300: 6 units / 301–350: 8 units / >350: 10 units 및 notify
 4. 혈당 측정: 식전 3회 + 취침 전 (금식 시 q4–6h)
 5. 목표 혈당: 140–180 mg/dL
 6. 용량 조정 (2–3일마다)
    - 공복 혈당 >180 mg/dL 지속: 기저인슐린 10–20% 증량
-   - 특정 식후(다음 식전) 고혈당: 해당 식사 인슐린 1–2 U 증량
+   - 특정 식후(다음 식전) 고혈당: 해당 식사 인슐린 1–2 units 증량
    - 혈당 <70 mg/dL 발생: 원인 확인 후 관련 인슐린 10–20% 감량
-7. 저혈당 시: 의식 있으면 포도당 15–20 g 경구, 15분 후 재측정 / 의식 저하 또는 금식 중이면 D50W 20–50 mL IV.
+7. 저혈당 시: 의식 있으면 포도당 15–20 g 경구, 15분 후 재측정 / 의식 저하 또는 금식 중이면 D50W 20–50 mL IV (2–5분에 걸쳐 서서히).
 8. 본과에서 혈당 추이 확인하며 조정하고, 퇴원 시 투약 계획 드리겠습니다.`,
-pearls:['TDD 0.3–0.5 U/kg; 고령·CKD·인슐린 미사용자는 0.2–0.3 U/kg','Sliding scale 단독 요법은 권장되지 않음','중환자: 지속 정주 인슐린, 목표 140–180 mg/dL','퇴원 처방은 입원 시 HbA1c 기준으로 결정'],
+pearls:['TDD 0.3–0.5 units/kg; 고령·CKD·인슐린 미사용자는 0.2–0.3 units/kg','Sliding scale 단독 요법은 권장되지 않음','중환자: 지속 정주 인슐린, 목표 140–180 mg/dL','퇴원 처방은 입원 시 HbA1c 기준으로 결정'],
 ref:'ADA Standards of Care 2026, Section 16'},
 
 {id:'dm3',cat:'dm',title:'스테로이드 유발 고혈당',dept:'류마티스내과, 호흡기내과, 신경과, 혈액종양내과',
@@ -406,12 +406,12 @@ reply:`상기 환자 스테로이드 (________ ___ mg/일) 투여 중 발생한 
 
 1. 스테로이드 유발 고혈당은 아침 1회 투여 시 공복 혈당은 정상에 가깝고 점심 이후~저녁 혈당이 주로 상승합니다. 혈당은 식전 3회 + 취침 전 측정 부탁드립니다 (공복 혈당만으로 판단하지 않음).
 2. 아침 1회 prednisolone/methylprednisolone 투여 시
-   - NPH 인슐린 ___ U SC, 스테로이드와 같은 시간(아침)에 투여
-   - 시작 용량: 0.1 U/kg per prednisolone 10 mg (최대 0.4 U/kg, prednisolone ≥40 mg 상당)
+   - NPH 인슐린 ___ units SC, 스테로이드와 같은 시간(아침)에 투여
+   - 시작 용량: 0.1 units/kg per prednisolone 10 mg (최대 0.4 units/kg, prednisolone ≥40 mg 상당)
    - 기존 인슐린 사용자는 기존 용량에 추가, 점심·저녁 식사 인슐린 위주로 20–30% 증량
 3. Dexamethasone 또는 1일 2회 이상 분할 투여 시
    - 혈당 상승이 하루 종일 지속되므로 basal-bolus 요법 (기저인슐린 비중 증가)
-4. 보정: correction scale 병용 (151–200: 2 U / 201–250: 4 U / 251–300: 6 U / 301–350: 8 U / >350: 10 U)
+4. 보정: correction scale 병용 (151–200: 2 units / 201–250: 4 units / 251–300: 6 units / 301–350: 8 units / >350: 10 units)
 5. 스테로이드 감량 시 인슐린도 비례하여 감량 바랍니다 (특히 펄스 치료 종료 직후 저혈당 주의). 스테로이드 중단 시 NPH 중단.
 6. 경증 고혈당 (식후 <250 mg/dL)이고 단기간 사용 시 경구약 (DPP-4 억제제 등) 또는 correction만으로 관찰 가능합니다.
 
@@ -428,13 +428,13 @@ reply:`상기 환자 (금식 / 지속 경관영양 / 간헐 경관영양 / TPN) 
 2. 제1형 당뇨병: 기저인슐린 절대 중단 금지
 
 [지속 경관영양 (24시간)]
-1. 기저인슐린: glargine ___ U SC 1일 1회 (기존 기저 용량 유지 또는 TDD의 30–50%)
-2. 영양 인슐린: regular insulin ___ U SC q6h (또는 rapid-acting q4h) — 영양분 탄수화물 10–15 g당 1 U로 시작
+1. 기저인슐린: glargine ___ units SC 1일 1회 (기존 기저 용량 유지 또는 TDD의 30–50%)
+2. 영양 인슐린: regular insulin ___ units SC q6h (또는 rapid-acting q4h) — 영양분 탄수화물 10–15 g당 1 U로 시작
 3. Correction scale 병용, 혈당 q4–6h 측정
 4. 경관영양이 중단되면 영양 인슐린 즉시 중단하고, 저혈당 위험 시 D10W 50 mL/h 투여 바랍니다.
 
 [간헐(bolus) 경관영양]
-1. 기저인슐린 + 매 feeding 직전 rapid-acting ___ U (탄수화물 10–15 g당 1 U)
+1. 기저인슐린 + 매 feeding 직전 rapid-acting ___ units (탄수화물 10–15 g당 1 unit)
 
 [TPN]
 1. Regular insulin을 TPN bag에 혼합: dextrose 10 g당 1 U로 시작, 혈당에 따라 매일 dextrose 10 g당 0.5–1 U씩 조정
@@ -447,17 +447,17 @@ ref:'ADA Standards of Care 2026, Section 16'},
 req:'퇴원 예정 환자로 인슐린 투여 중입니다. 퇴원 후 용량 조정 방법 및 추적 부탁드립니다.',
 reply:`상기 환자 퇴원 후 인슐린 용량 조정 관련 의뢰 주셨습니다.
 
-1. 퇴원 처방: ____________________ (기저 ___ U / 식사 ___ U)
+1. 퇴원 처방: ____________________ (기저 ___ units / 식사 ___ units)
 2. 자가혈당 측정: 매일 공복 + 필요 시 식후 2시간 또는 취침 전
 3. 기저인슐린 자가 조정 (공복 혈당 기준)
    - 목표 공복 혈당 80–130 mg/dL (고령·저혈당 고위험은 100–150 mg/dL)
-   - 3일 연속 공복 혈당 >130 mg/dL: 2 U 증량 (3일마다 반복)
-   - 공복 혈당 <80 mg/dL 또는 저혈당 발생: 4 U 또는 10–20% 감량
-4. 기저인슐린이 0.5 U/kg/일을 넘거나 취침 전–아침 혈당 차이가 50 mg/dL 이상이면 기저 증량보다 식사 인슐린 또는 GLP-1 RA 병합을 검토하겠습니다 (overbasalization).
+   - 3일 연속 공복 혈당 >130 mg/dL: 2 units 증량 (3일마다 반복)
+   - 공복 혈당 <80 mg/dL 또는 저혈당 발생: 4 units 또는 10–20% 감량
+4. 기저인슐린이 0.5 units/kg/일을 넘거나 취침 전–아침 혈당 차이가 50 mg/dL 이상이면 기저 증량보다 식사 인슐린 또는 GLP-1 RA 병합을 검토하겠습니다 (overbasalization).
 5. 저혈당 교육: 혈당 <70 mg/dL 시 포도당 15 g (주스 반 컵, 사탕 3–4개) 섭취 후 15분 뒤 재측정.
 6. 아픈 날 (sick day): 식사를 못해도 기저인슐린은 감량(50–80%)하여 유지, SGLT2 억제제·metformin은 일시 중단, 혈당 4시간마다 측정. 구토 지속 시 응급실 방문.
 7. 본과 외래 ___주 후 예약하겠습니다.`,
-pearls:['환자 주도 basal titration(2U/3일)은 단순하고 안전','Overbasalization 신호: 기저 >0.5 U/kg, bedtime–AM 차 ≥50, 저혈당'],
+pearls:['환자 주도 basal titration(2U/3일)은 단순하고 안전','Overbasalization 신호: 기저 >0.5 units/kg, bedtime–AM 차 ≥50, 저혈당'],
 ref:'ADA Standards of Care 2026, Section 9'},
 
 {id:'dm6',cat:'dm',title:'내시경·조영제 검사 전 당뇨약 조정',dept:'소화기내과, 영상의학과, 비뇨의학과',
@@ -491,8 +491,8 @@ reply:`상기 환자 (DKA / HHS) 의심 하 의뢰 주셨습니다.
    - K <3.5: 인슐린 보류하고 KCl 보충 먼저
    - K 3.5–5.0: 수액 1 L당 KCl 20–40 mEq 추가
    - K >5.0: 보충 없이 q2h 재측정
-4. 인슐린: regular insulin 0.1 U/kg/h 지속 정주 (bolus 없이 시작 시 0.14 U/kg/h)
-   - 혈당 <250 mg/dL (HHS는 <300): 수액에 D5W 추가, 인슐린 0.05 U/kg/h로 감량 (혈당 150–200 유지)
+4. 인슐린: regular insulin 지속 정주 — bolus 0.1 units/kg IV (1–2분에 걸쳐) 후 0.1 units/kg/h, 또는 bolus 없이 0.14 units/kg/h
+   - 혈당 <250 mg/dL (HHS는 <300): 수액에 D5W 추가, 인슐린 0.05 units/kg/h로 감량 (혈당 150–200 유지)
 5. 검사 주기: 혈당 q1h, 전해질·VBG q2–4h
 6. 해소 기준 (DKA): 혈당 <250 mg/dL + 혈중 ketone <0.6 mmol/L + venous pH ≥7.3 또는 HCO3 ≥18
 7. SC 전환: 정주 인슐린 중단 1–2시간 전 기저인슐린 투여 (또는 치료 초기부터 기저인슐린 병용)
@@ -509,19 +509,19 @@ reply:`상기 환자 (원발성/이차성) 부신기능저하증으로 hydrocort
 
 [전신마취 / 중등도~대수술]
 1. 수술 당일 아침 평소 경구 용량 복용
-2. 마취 유도 시 hydrocortisone 100 mg IV
-3. 이후 hydrocortisone 200 mg/24h 지속 정주 (또는 50 mg IV q6h) — 금식 및 수술 스트레스 지속 기간 동안
+2. 마취 유도 시 hydrocortisone 100 mg IV (3–5분에 걸쳐)
+3. 이후 hydrocortisone 200 mg/24h 지속 정주 (또는 50 mg IV q6h (각 3–5분에 걸쳐)) — 금식 및 수술 스트레스 지속 기간 동안
 4. 경구 섭취 가능하고 상태 안정 시 평소 경구 용량의 2배로 48시간 (대수술·합병증 시 최대 1주) → 평소 용량으로 복귀
 5. Hydrocortisone ≥50 mg/일 투여 중에는 fludrocortisone 생략 가능, 경구 전환 시 재개
 
 [경미한 시술 (국소마취, 내시경, 치과 등)]
 1. 평소 용량 유지, 침습 정도에 따라 시술 당일 경구 용량 2배
-2. 장정결이 필요한 대장내시경은 장정결 중 탈수 위험 있어 hydrocortisone 100 mg IV(시술 전) 고려
+2. 장정결이 필요한 대장내시경은 장정결 중 탈수 위험 있어 hydrocortisone 100 mg IV (시술 전, 3–5분에 걸쳐) 고려
 
 [주의]
-1. 수술 중·후 설명되지 않는 저혈압, 저나트륨혈증, 저혈당, 발열 시 부신위기 가능성 — hydrocortisone 100 mg IV 추가 및 NS 수액 투여 후 연락 바랍니다.
+1. 수술 중·후 설명되지 않는 저혈압, 저나트륨혈증, 저혈당, 발열 시 부신위기 가능성 — hydrocortisone 100 mg IV (3–5분에 걸쳐) 추가 및 NS 수액 투여 후 연락 바랍니다.
 2. Etomidate 사용 시 부신 억제 작용 고려 바랍니다.`,
-pearls:['2020 SfE/AAGBI 지침: 유도 시 HC 100 mg → 200 mg/24h 지속주입','지속주입이 bolus q6h보다 혈중 농도 변동이 적음','Dexamethasone 4 mg 등으로 대체 시 mineralocorticoid 효과 없음'],
+pearls:['2020 SfE/AAGBI 지침: 유도 시 hydrocortisone 100 mg → 200 mg/24h 지속주입','지속주입이 bolus q6h보다 혈중 농도 변동이 적음','Dexamethasone 4 mg 등으로 대체 시 mineralocorticoid 효과 없음'],
 ref:'Woodcock T et al. Guidelines for the management of glucocorticoids during the peri-operative period for patients with adrenal insufficiency. Anaesthesia 2020;75:654'},
 
 {id:'ad2',cat:'ad',title:'부신기능저하증 환자 급성 질환 (감염 등)',dept:'감염내과, 호흡기내과, 내과 병동, 응급의학과',
@@ -532,10 +532,10 @@ reply:`상기 환자 부신기능저하증 (hydrocortisone ___ mg/일 복용 중
    - 발열 >38℃: 평소 용량의 2배 / ≥39℃: 3배 (예: hydrocortisone 20-10-0 → 40-20-0)
    - 회복 후 2–3일 내 평소 용량으로 복귀
 2. 구토·설사로 복용 불가하거나 활력징후 불안정
-   - hydrocortisone 100 mg IV/IM 즉시 → 50 mg IV q6h (또는 200 mg/24h 지속 정주)
+   - hydrocortisone 100 mg IV 즉시 (3–5분에 걸쳐; 정맥로 없으면 IM) → 50 mg IV q6h (각 3–5분에 걸쳐) (또는 200 mg/24h 지속 정주)
    - NS 수액 투여
 3. 패혈증·중환자실 치료 시: hydrocortisone 200 mg/24h 지속 정주 유지
-4. 호전 시 hydrocortisone IV 25–50 mg q6h로 감량 → 경구 2배 용량 → 평소 용량 순으로 감량하겠습니다.
+4. 호전 시 hydrocortisone IV 25–50 mg q6h (각 3–5분에 걸쳐)로 감량 → 경구 2배 용량 → 평소 용량 순으로 감량하겠습니다.
 5. Fludrocortisone: 고용량 hydrocortisone(≥50 mg/일) 중에는 생략 가능, 감량 시 재개.
 6. 전해질 (Na, K), 혈당 모니터링 부탁드립니다.
 7. 퇴원 시 sick day rule 및 응급 주사(hydrocortisone 100 mg IM) 교육 시행하겠습니다.`,
@@ -547,14 +547,14 @@ req:'저혈압, 저나트륨혈증, 고칼륨혈증으로 부신위기 의심됩
 reply:`상기 환자 부신위기 의심 하 의뢰 주셨습니다.
 
 1. 검사를 위해 치료를 지연하지 마십시오. 가능하면 투약 전 혈청 cortisol, ACTH (+ renin, aldosterone) 채혈 후 즉시 치료 시작 바랍니다.
-2. Hydrocortisone 100 mg IV bolus → 200 mg/24h 지속 정주 (또는 50 mg IV q6h)
+2. Hydrocortisone 100 mg IV bolus (3–5분에 걸쳐) → 200 mg/24h 지속 정주 (또는 50 mg IV q6h (각 3–5분에 걸쳐))
 3. 수액: NS 1 L 첫 1시간 내 투여, 이후 활력징후·전해질에 따라 조절 (심부전 동반 시 주의)
 4. 저혈당 시 D50W 투여 및 포도당 수액
 5. 유발 요인 (감염, 스테로이드 중단, 수술, 위장관 질환 등) 평가 및 치료
 6. 24–72시간 후 상태 호전되면 hydrocortisone 감량, 경구 전환 (평소 용량의 2배 → 평소 용량)
 7. 진단 미확정 시 회복 후 ACTH 자극검사로 확진하겠습니다 (hydrocortisone 투여 중이면 검사 전 24시간 보류 필요).
 8. 원발성 부신기능저하증이면 hydrocortisone ≤50 mg/일로 감량 시 fludrocortisone 0.05–0.1 mg/일 추가하겠습니다.`,
-pearls:['HC 100 mg 이상은 mineralocorticoid 효과 충분','Dexamethasone은 cortisol 측정에 간섭하지 않으나 mineralocorticoid 효과 없음'],
+pearls:['hydrocortisone 100 mg 이상은 mineralocorticoid 효과 충분','Dexamethasone은 cortisol 측정에 간섭하지 않으나 mineralocorticoid 효과 없음'],
 ref:'Bornstein SR et al. JCEM 2016; Rushworth RL et al. N Engl J Med 2019;381:852'},
 
 {id:'ad4',cat:'ad',title:'장기 스테로이드 복용자 수술 (부신기능 억제 가능성)',dept:'정형외과, 외과 (류마티스·호흡기·신장 질환자)',
@@ -563,7 +563,7 @@ reply:`상기 환자 ________ 으로 prednisolone ___ mg/일 (기간: ___) 복�
 
 1. 현재 prednisolone ≥5 mg/일 (또는 동등 용량)을 4주 이상 복용 중이면 시상하부-뇌하수체-부신 축 억제 가능성이 있습니다.
    - 수술 당일까지 평소 스테로이드 지속 (중단하지 마십시오)
-   - 전신마취·중등도 이상 수술: 마취 유도 시 hydrocortisone 100 mg IV → 200 mg/24h 지속 정주 (또는 50 mg IV q6h), 경구 섭취 재개 시 평소 용량의 2배 48시간 후 평소 용량으로 복귀
+   - 전신마취·중등도 이상 수술: 마취 유도 시 hydrocortisone 100 mg IV (3–5분에 걸쳐) → 200 mg/24h 지속 정주 (또는 50 mg IV q6h (각 3–5분에 걸쳐)), 경구 섭취 재개 시 평소 용량의 2배 48시간 후 평소 용량으로 복귀
    - 경미한 시술: 평소 용량 유지
 2. prednisolone <5 mg/일 또는 4주 미만 사용: 억제 가능성 낮아 평소 용량 유지, 설명되지 않는 저혈압 시 stress dose 투여 바랍니다.
 3. 최근 1년 내 (특히 3개월 내) 장기간 스테로이드 사용 후 중단한 경우: 부신기능 회복 미확인 상태로 stress dose 투여를 권합니다.
@@ -580,14 +580,14 @@ reply:`상기 환자 장기 스테로이드 (________ ___ mg, 기간 ___) 감량
 2. prednisolone 4–5 mg/일 (생리적 용량)에 도달하면
    - 1–4주 간격으로 1 mg씩 천천히 감량하거나, 아침 cortisol 검사로 부신기능을 평가하겠습니다.
 3. 아침 혈청 cortisol 검사 (오전 8–9시, prednisolone 마지막 복용 후 24시간 이상 경과, hydrocortisone은 24시간 보류 후)
-   - >10 µg/dL (약 300 nmol/L): 부신기능 회복 → 스테로이드 중단 가능
-   - 5–10 µg/dL: 생리적 용량 유지하며 수주–수개월 후 재검 (필요 시 ACTH 자극검사)
-   - <5 µg/dL (약 150 nmol/L): 부신기능 미회복 → 생리적 용량 유지, 수개월 후 재검
+   - >10 mcg/dL (약 300 nmol/L): 부신기능 회복 → 스테로이드 중단 가능
+   - 5–10 mcg/dL: 생리적 용량 유지하며 수주–수개월 후 재검 (필요 시 ACTH 자극검사)
+   - <5 mcg/dL (약 150 nmol/L): 부신기능 미회복 → 생리적 용량 유지, 수개월 후 재검
    (cut-off는 측정법에 따라 다를 수 있음)
 4. 감량 중 피로, 근육통, 관절통, 식욕저하 등은 부신기능저하 또는 스테로이드 금단 증상일 수 있어, 증상이 심하면 직전 용량으로 일시 증량 바랍니다.
 5. 회복 전까지 급성 질환·수술 시 stress dose 필요 (sick day rule 교육).
 6. 본과 외래에서 추적하겠습니다.`,
-pearls:['Dexamethasone 사용 중에는 아침 cortisol로 평가 불가 → HC 또는 pred로 전환 후 평가','금단 증후군과 부신기능저하는 증상만으로 구분 어려움'],
+pearls:['Dexamethasone 사용 중에는 아침 cortisol로 평가 불가 → hydrocortisone 또는 pred로 전환 후 평가','금단 증후군과 부신기능저하는 증상만으로 구분 어려움'],
 ref:'Beuschlein F et al. Eur J Endocrinol 2024;190:G25'},
 
 {id:'ad6',cat:'ad',title:'부신우연종 (adrenal incidentaloma) 평가',dept:'영상의학과, 외과, 비뇨의학과, 건강검진',
@@ -601,7 +601,7 @@ reply:`상기 환자 영상검사에서 우연히 발견된 (좌/우/양측) 부
 
 [호르몬 평가]
 1. 1 mg dexamethasone 억제검사 (모든 환자): 전날 23시 dexamethasone 1 mg 복용 후 다음 날 08시 cortisol
-   - ≤1.8 µg/dL: 정상 / 1.9–5.0 µg/dL: 경도 자율 코티솔 분비(MACS) 가능 / >5.0 µg/dL: 자율 코티솔 분비
+   - ≤1.8 mcg/dL: 정상 / 1.9–5.0 mcg/dL: 경도 자율 코티솔 분비(MACS) 가능 / >5.0 mcg/dL: 자율 코티솔 분비
 2. 혈장 metanephrine (또는 24시간 요 metanephrine): ≤10 HU 선종이 명확하면 생략 가능
 3. 고혈압 또는 저칼륨혈증 동반 시: aldosterone, renin (aldosterone-to-renin ratio)
 4. 부신피질암 의심 시: DHEA-S, 성호르몬, 스테로이드 전구체
@@ -697,7 +697,7 @@ reply:`상기 환자 골다공증 (T-score ___, 골절력 ___) 치료 시작과 
    - 골절 위험 중등도: 치과 치료 (약 2–3개월 내) 완료 후 비스포스포네이트 시작
    - 골절 위험 매우 높음 (최근 골절, 다발성 척추골절, T-score ≤-3.0 등): 치료 지연이 불리하므로 골형성촉진제 (teriparatide 등; 급여 기준 확인)로 먼저 시작 고려 — MRONJ 관련성 거의 없음
    - 폐경 후 비교적 젊은 여성 (척추골절 예방 위주): SERM (raloxifene, bazedoxifene) 또는 호르몬 치료 고려 — MRONJ 위험 없음 (정맥혈전증 위험 주의)
-3. 칼슘 (식이 포함 1,000–1,200 mg/일) 및 비타민 D (800–1,000 IU/일 이상, 25(OH)D ≥20–30 ng/mL 목표)는 치과 치료와 무관하게 지속합니다.
+3. 칼슘 (식이 포함 1,000–1,200 mg/일) 및 비타민 D (800–1,000 units/일 이상, 25(OH)D ≥20–30 ng/mL 목표)는 치과 치료와 무관하게 지속합니다.
 4. 치과 치료 완료 시점을 알려주시면 본과에서 골다공증 치료를 시작하겠습니다.`,
 pearls:['항흡수제 시작 전 치과 검진은 암 환자뿐 아니라 골다공증 환자에서도 권장','SERM은 비척추·고관절 골절 예방 효과 근거 부족'],
 ref:'AAOMS 2022; 대한골대사학회 골다공증 진료지침 2024'},
@@ -728,7 +728,7 @@ reply:`상기 환자 고칼슘혈증 (총 Ca ___ mg/dL, albumin ___ g/dL, 교정
 [치료] (교정 Ca ≥14 mg/dL 또는 증상 동반 시)
 1. 유발 약제 중단: thiazide, lithium, 칼슘·비타민 D 보충제
 2. 수액: NS 200–300 mL/h로 시작, 소변량 100–150 mL/h 유지되도록 조절 (심부전·신부전 시 주의)
-3. Calcitonin 4 IU/kg SC/IM q12h — 빠른 효과 (4–6시간), 48시간 이내 사용 (tachyphylaxis)
+3. Calcitonin 4 units/kg SC (또는 IM) q12h — 빠른 효과 (4–6시간), 48시간 이내 사용 (tachyphylaxis)
 4. Zoledronic acid 4 mg IV (15분 이상 정주) — 효과 발현 2–4일
    - 신기능 저하 시 용량 감량 (CrCl 50–60: 3.5 mg / 40–49: 3.3 mg / 30–39: 3.0 mg) 또는 pamidronate 60–90 mg 2–4시간 정주
 5. 신부전 또는 비스포스포네이트 불응: denosumab 120 mg SC (저칼슘혈증 주의)
@@ -782,11 +782,11 @@ reply:`상기 환자 (갑상선 전절제술 / 부갑상선절제술) 후 저칼
 2. 이후 지속 정주: elemental Ca 0.5–1.5 mg/kg/h
    - 예) calcium gluconate 11 g + D5W 890 mL (약 1 mg/mL elemental Ca) → ___ mL/h (체중 ___ kg × 0.5–1 mg/kg/h)
    - Ca q4–6h 측정하며 조절, 경구 치료 효과 나타나면 감량
-3. Mg <1.6 mg/dL이면 MgSO4 2 g IV (Mg 결핍 시 칼슘 교정 불응)
+3. Mg <1.6 mg/dL이면 Magnesium sulfate 2 g IV (NS 100 mL 희석, 증상 있으면 15–20분 / 없으면 1시간에 걸쳐; Mg 결핍 시 칼슘 교정 불응)
 
 [경구 치료] (증상 경미하거나 정주 치료와 병행)
 1. Calcium carbonate: elemental Ca 1,000–3,000 mg/일 분할 (식후 복용)
-2. Calcitriol 0.25–0.5 µg 1일 2회 (PTH 저하 시 필수)
+2. Calcitriol 0.25–0.5 mcg 1일 2회 (PTH 저하 시 필수)
 3. 목표: 증상 없이 Ca 정상 하한 (8.0–8.5 mg/dL) 유지 — 정상 상한 이상 목표 시 고칼슘뇨증 위험
 
 [수술 후 예방적 투여 기준]
@@ -815,10 +815,10 @@ reply:`상기 환자 저칼슘혈증 (총 Ca ___, albumin ___, 교정 Ca ___ / �
 
 [치료]
 1. 증상 있거나 교정 Ca <7.5 mg/dL: 10% calcium gluconate 1–2 g IV (10–20분) → elemental Ca 0.5–1.5 mg/kg/h 지속 정주
-2. Mg <1.6 mg/dL: MgSO4 2 g IV 후 필요 시 반복 (신기능 고려)
+2. Mg <1.6 mg/dL: Magnesium sulfate 2 g IV (NS 100 mL 희석, 15분–1시간에 걸쳐) 후 필요 시 반복 (신기능 고려)
 3. 경구: elemental Ca 1,000–2,000 mg/일 분할
-4. 비타민 D 결핍: cholecalciferol 보충 (예: 1,000–4,000 IU/일 또는 주 1회 고용량)
-5. 부갑상선기능저하증 또는 CKD에서 활성형 비타민 D 필요 시 calcitriol 0.25–0.5 µg 1일 1–2회
+4. 비타민 D 결핍: cholecalciferol 보충 (예: 1,000–4,000 units/일 또는 주 1회 고용량)
+5. 부갑상선기능저하증 또는 CKD에서 활성형 비타민 D 필요 시 calcitriol 0.25–0.5 mcg 1일 1–2회
 6. Denosumab 투여 후 저칼슘혈증 (특히 eGFR <30): 수주간 지속될 수 있어 칼슘·calcitriol 투여 및 주 1–2회 Ca 추적 필요
 7. 결과 확인 후 본과 외래 추적하겠습니다.`,
 pearls:['CKD 4–5기에서 denosumab 후 중증 저칼슘혈증 위험 (FDA boxed warning 2024)','PPI 장기 사용 → 저Mg → 기능성 부갑상선기능저하'],
@@ -826,7 +826,7 @@ ref:'FDA Prolia boxed warning 2024; Endocrine Society hypoparathyroidism guideli
 
 {id:'ca5',cat:'ca',title:'만성 부갑상선기능저하증 환자 수술·금식',dept:'외과계 전반',
 req:'부갑상선기능저하증으로 calcitriol, 칼슘제 복용 중인 환자로 수술 예정입니다. 금식 중 관리 문의드립니다.',
-reply:`상기 환자 부갑상선기능저하증으로 calcitriol ___ µg/일, elemental Ca ___ mg/일 복용 중이며 수술 전후 관리 의뢰 주셨습니다.
+reply:`상기 환자 부갑상선기능저하증으로 calcitriol ___ mcg/일, elemental Ca ___ mg/일 복용 중이며 수술 전후 관리 의뢰 주셨습니다.
 
 1. 수술 전 Ca, P, Mg, Cr 확인 바랍니다 (Ca 정상 하한 유지 상태 확인).
 2. 수술 당일 아침까지 calcitriol, 칼슘제 복용 (소량의 물과 함께).
@@ -927,7 +927,7 @@ reply:`상기 환자 갑상선기능항진증 (TSH ___, free T4 ___, 원인: ___
 [응급·준응급 수술]
 1. 베타차단제: propranolol 20–40 mg q6h 경구 또는 esmolol 정주 (심박수 <80–90)
 2. Methimazole 20–30 mg/일 (또는 PTU 200 mg q6–8h)
-3. 중등도 이상 시 hydrocortisone 100 mg IV q8h (말초 T4→T3 전환 억제 및 상대적 부신기능저하 대비)
+3. 중등도 이상 시 hydrocortisone 100 mg IV q8h (각 3–5분에 걸쳐) (말초 T4→T3 전환 억제 및 상대적 부신기능저하 대비)
 4. 항갑상선제 투여 1시간 이후 Lugol 용액 또는 SSKI 투여 고려
 5. 수술 중·후 고열, 빈맥, 의식변화 시 갑상선 폭풍 가능성 — 즉시 연락 바랍니다.
 
@@ -938,7 +938,7 @@ ref:'Ross DS et al. 2016 ATA Guidelines for diagnosis and management of hyperthy
 
 {id:'th2',cat:'th',title:'갑상선기능저하증 환자 수술·장기 금식',dept:'외과계, 중환자실',
 req:'갑상선기능저하증으로 levothyroxine 복용 중인 환자로 수술 후 장기간 금식 예정입니다. 투약 방법 문의드립니다.',
-reply:`상기 환자 갑상선기능저하증으로 levothyroxine ___ µg/일 복용 중이며 수술 전후 관리 의뢰 주셨습니다.
+reply:`상기 환자 갑상선기능저하증으로 levothyroxine ___ mcg/일 복용 중이며 수술 전후 관리 의뢰 주셨습니다.
 
 1. 경도~중등도 갑상선기능저하증은 수술을 연기할 필요가 없습니다.
 2. 중증 (점액수종, free T4 현저히 저하, 의식 저하·저체온·저나트륨혈증 동반)은 예정 수술 연기 및 치료가 필요합니다.
@@ -961,7 +961,7 @@ reply:`상기 환자 ________ (갑상선기능항진증 / 갑상선결절 / 갑�
    - 불가피한 경우 고위험 (고령, 심질환) 환자는 methimazole 20–30 mg/일을 조영제 투여 전부터 2–4주간 예방 투여 고려
 3. 방사성요오드 치료 또는 전신 요오드 스캔 예정 환자: 조영제 투여 후 최소 4–6주 이상 요오드 섭취가 감소해야 하므로 일정 조율 바랍니다 (필요 시 요중 요오드 확인).
 4. 조영제 투여 후 수주 내 두근거림, 체중 감소 등 증상 시 갑상선기능검사 바랍니다.`,
-pearls:['Jod-Basedow: 자율기능 결절·요오드 결핍 지역에서 흔함','조영제 1회 = 수만 µg 요오드 부하'],
+pearls:['Jod-Basedow: 자율기능 결절·요오드 결핍 지역에서 흔함','조영제 1회 = 수만 mcg 요오드 부하'],
 ref:'ACR Manual on Contrast Media 2024; ATA 2016 hyperthyroidism guideline'},
 
 {id:'th4',cat:'th',title:'면역관문억제제(ICI) 관련 내분비 이상',dept:'혈액종양내과, 비뇨의학과, 호흡기내과(종양)',
@@ -970,7 +970,7 @@ reply:`상기 환자 ________ 투여 중 (최근 투여일: ____) 내분비 이�
 
 [갑상선염 (가장 흔함)]
 1. 갑상선중독기 (TSH 억제, free T4 상승): 파괴성 갑상선염으로 항갑상선제는 효과 없음 — 증상 시 propranolol 또는 atenolol, 2–3주 간격 갑상선기능 추적 (Graves병 의심 시 TRAb 확인)
-2. 갑상선기능저하기: TSH >10 또는 증상 있는 경우 levothyroxine 시작 (1.6 µg/kg/일, 고령·심질환은 25–50 µg/일로 시작)
+2. 갑상선기능저하기: TSH >10 또는 증상 있는 경우 levothyroxine 시작 (1.6 mcg/kg/일, 고령·심질환은 25–50 mcg/일로 시작)
 3. ICI는 대부분 계속 투여 가능합니다.
 
 [뇌하수체염 (특히 ipilimumab)]
@@ -978,7 +978,7 @@ reply:`상기 환자 ________ 투여 중 (최근 투여일: ____) 내분비 이�
 2. ACTH 결핍 (아침 cortisol 저하): hydrocortisone 15–20 mg/일 분할 투여 — 평생 필요할 수 있음
 3. 중추성 갑상선기능저하 동반 시 반드시 hydrocortisone 먼저 시작 후 levothyroxine 시작 (부신위기 예방)
 4. 심한 두통·시야장애 동반 시 고용량 스테로이드 (prednisolone 1 mg/kg) 및 뇌하수체 MRI
-5. 부신위기 증상 (저혈압, 저나트륨혈증) 시 hydrocortisone 100 mg IV
+5. 부신위기 증상 (저혈압, 저나트륨혈증) 시 hydrocortisone 100 mg IV (3–5분에 걸쳐)
 
 [ICI 관련 당뇨병 (드묾, 급성 발생)]
 1. 혈당 급상승 시 즉시 ketone, VBG 확인 — DKA로 발현 가능
@@ -1015,7 +1015,7 @@ reply:`상기 환자 임신 ___주, 75 g OGTT (공복 ___ / 1시간 ___ / 2시�
 3. 혈당 목표 (저혈당 없이)
    - 공복 <95 mg/dL / 식후 1시간 <140 mg/dL / 식후 2시간 <120 mg/dL
 4. 생활요법 1–2주 후 목표 미달 시 인슐린 시작
-   - 공복 고혈당: NPH (또는 detemir/glargine) 취침 전 0.1–0.2 U/kg로 시작
+   - 공복 고혈당: NPH (또는 detemir/glargine) 취침 전 0.1–0.2 units/kg로 시작
    - 식후 고혈당: 해당 식사 전 rapid-acting insulin 2–4 U로 시작
    - 2–3일마다 혈당에 따라 10–20% 조정
 5. Metformin, glyburide는 태반을 통과하고 자녀 장기 안전성 자료가 제한적이어서 1차 약제로 권하지 않습니다 (인슐린이 우선).
@@ -1063,7 +1063,7 @@ reply:`상기 산모 (GDM / 제1형 / 제2형) 당뇨병, 현재 인슐린 _____
 [진통·분만 중]
 1. 혈당 매 1–2시간 측정 (제1형 매 1시간)
 2. 목표 혈당 70–110 mg/dL (신생아 저혈당 예방)
-3. 혈당 >110 mg/dL 지속: regular insulin 지속 정주 (0.5–1 U/h로 시작) + D5W 100 mL/h 병행
+3. 혈당 >110 mg/dL 지속: regular insulin 지속 정주 (0.5–1 unit/h로 시작) + D5W 100 mL/h 병행
 4. 혈당 <70 mg/dL: 인슐린 중단, D5W 증량 또는 D10W
 
 [분만 후]
@@ -1117,12 +1117,12 @@ reply:`상기 환자 반복 저혈당 (최저 ___ mg/dL, 발생 시점: 공복 /
    - 비섬세포종양 (IGF-2 분비 대형 간엽성 종양)
 3. 저혈당 발생 시 (혈당 <55 mg/dL) 포도당 투여 전 채혈 (critical sample)
    - 혈당 (정맥), insulin, C-peptide, proinsulin, β-hydroxybutyrate, sulfonylurea 선별검사, cortisol
-   - 채혈 후 glucagon 1 mg IV → 10, 20, 30분 혈당 (≥25 mg/dL 상승 시 인슐린 매개성 시사)
+   - 채혈 후 glucagon 1 mg IV (1분에 걸쳐) → 10, 20, 30분 혈당 (≥25 mg/dL 상승 시 인슐린 매개성 시사)
 4. 결과 해석 (혈당 <55 mg/dL 시)
    - insulin ≥3 µU/mL, C-peptide ≥0.6 ng/mL, proinsulin ≥5 pmol/L, β-OHB ≤2.7 mmol/L → 내인성 고인슐린혈증 (인슐린종, sulfonylurea 등)
    - insulin 높고 C-peptide 낮음 → 외인성 인슐린
    - insulin·C-peptide 모두 억제 → 비인슐린 매개 (IGF-2, 부신기능저하, 간부전 등)
-5. 저혈당 예방: 혈당 q4–6h (필요 시 q1–2h), 저혈당 시 D50W 20–50 mL IV, 필요 시 D10W 지속 정주
+5. 저혈당 예방: 혈당 q4–6h (필요 시 q1–2h), 저혈당 시 D50W 20–50 mL IV (2–5분에 걸쳐 서서히), 필요 시 D10W 지속 정주
 6. 외래 평가 시 필요하면 72시간 금식검사 시행하겠습니다.`,
 pearls:['Critical sample 없이 포도당 투여하면 진단 기회 상실','중환자 저혈당은 대부분 질환·약제 원인'],
 ref:'Cryer PE et al. Endocrine Society Clinical Practice Guideline: Evaluation and management of adult hypoglycemic disorders. JCEM 2009;94:709'},
@@ -1143,8 +1143,8 @@ reply:`상기 환자 뇌하수체 (미세/거대) 선종 ___ cm (시신경 교�
 
 [결과에 따른 처치]
 1. 프로락틴종 (특히 거대 프로락틴종, PRL 현저 상승): 수술보다 dopamine 효현제 (cabergoline) 1차 치료가 원칙 — 수술 전 확인 바랍니다.
-2. ACTH 결핍 (아침 cortisol <5 µg/dL): 수술 전부터 hydrocortisone 15–20 mg/일 (분할) 보충, 수술 시 stress dose (마취 유도 시 hydrocortisone 100 mg IV → 50 mg q6h 또는 200 mg/24h, 이후 감량)
-3. 시상하부-뇌하수체-부신 축 정상 (아침 cortisol ≥15 µg/dL 또는 자극검사 정상): 수술 전후 스테로이드 없이 수술 후 1–3일 아침 cortisol로 평가 가능 (선택적 투여 프로토콜) — 귀과 프로토콜이 일률적 stress dose이면 그에 따름
+2. ACTH 결핍 (아침 cortisol <5 mcg/dL): 수술 전부터 hydrocortisone 15–20 mg/일 (분할) 보충, 수술 시 stress dose (마취 유도 시 hydrocortisone 100 mg IV (3–5분에 걸쳐) → 50 mg IV q6h (각 3–5분에 걸쳐) 또는 200 mg/24h 지속 정주, 이후 감량)
+3. 시상하부-뇌하수체-부신 축 정상 (아침 cortisol ≥15 mcg/dL 또는 자극검사 정상): 수술 전후 스테로이드 없이 수술 후 1–3일 아침 cortisol로 평가 가능 (선택적 투여 프로토콜) — 귀과 프로토콜이 일률적 stress dose이면 그에 따름
 4. 중추성 갑상선기능저하: levothyroxine 보충 (ACTH 결핍 동반 시 hydrocortisone 먼저 시작 후)
 5. 쿠싱병: 수술 후 관해 평가를 위해 수술 후 cortisol 측정 전까지 스테로이드 투여 방침을 미리 상의하겠습니다.
 
@@ -1161,7 +1161,7 @@ reply:`상기 환자 __/__ 경접형동 뇌하수체 수술 후 (POD ___) 관리
    - 수술 중 투여된 수액의 이뇨, 고혈당(삼투성 이뇨), mannitol과 감별 바랍니다.
 2. 의식 명료하고 갈증 기전이 정상이면 갈증에 따라 수분 섭취 허용
 3. Desmopressin: 위 기준 충족 시 필요할 때마다(PRN) 투여 — 수술 초기에는 정기 투여를 피합니다
-   - Desmopressin 1 µg SC/IV, 또는 경구 0.1 mg / 설하 60–120 µg
+   - Desmopressin 1 mcg SC (정맥로만 있으면 IV 1–2분에 걸쳐), 또는 경구 0.1 mg / 설하 60–120 mcg
    - 다뇨 재발 시 재투여 (보통 8–24시간 간격)
 4. 모니터링: 시간당 소변량, 섭취/배설량, 혈청 Na q6–12h, 요비중
 5. 경구 섭취 불가 시 소변량에 맞춰 D5W 또는 0.45% NaCl 보충
@@ -1173,14 +1173,14 @@ reply:`상기 환자 __/__ 경접형동 뇌하수체 수술 후 (POD ___) 관리
 
 [부신 기능 평가]
 1. 수술 전후 스테로이드 미투여 시 POD 1–3 아침 (08시) cortisol 측정
-   - ≥15 µg/dL: 충분, 보충 불필요
-   - <5 µg/dL: 결핍 → hydrocortisone 15–20 mg/일 시작
-   - 5–15 µg/dL: 생리적 용량 hydrocortisone 유지 후 6–12주 재평가
+   - ≥15 mcg/dL: 충분, 보충 불필요
+   - <5 mcg/dL: 결핍 → hydrocortisone 15–20 mg/일 시작
+   - 5–15 mcg/dL: 생리적 용량 hydrocortisone 유지 후 6–12주 재평가
 2. 스테로이드 투여 중이면 퇴원 시 생리적 용량으로 감량 (예: hydrocortisone 10-5-5 mg) 후 외래에서 평가하겠습니다.
 
 [추적]
 1. 수술 6–12주 후 뇌하수체 기능 전반 재평가, 수술 3개월 후 MRI
-2. 쿠싱병: 수술 후 cortisol <5 µg/dL이면 관해 시사 — 장기간 HC 보충 필요
+2. 쿠싱병: 수술 후 cortisol <5 mcg/dL이면 관해 시사 — 장기간 hydrocortisone 보충 필요
 3. 말단비대증: POD 1 GH, 수술 12주 후 IGF-1`,
 pearls:['Desmopressin 정기 투여 + 삼상 반응 SIADH기 = 중증 저나트륨혈증','요붕증 + ACTH 결핍 시 cortisol 보충 후 요붕증이 드러날 수 있음(masked DI)'],
 ref:'Pituitary Society 2021 perioperative consensus; Fleseriu M et al. JCEM 2016'},
@@ -1190,7 +1190,7 @@ req:'갑작스러운 심한 두통, 시력저하(안근마비)로 내원하여 M
 reply:`상기 환자 뇌하수체 졸중 의심 하 의뢰 주셨습니다.
 
 1. 즉시 채혈: cortisol, ACTH, TSH, free T4, PRL, IGF-1, GH, LH/FSH, testosterone/estradiol, Na, 혈당, 혈청 삼투압
-2. 채혈 후 즉시 hydrocortisone 100–200 mg IV bolus → 50–100 mg IV q6h (또는 2–4 mg/h 지속 정주)
+2. 채혈 후 즉시 hydrocortisone 100–200 mg IV bolus (3–5분에 걸쳐) → 50–100 mg IV q6h (각 3–5분에 걸쳐) (또는 2–4 mg/h 지속 정주)
    - 활력징후 불안정, 의식변화, 시야장애, 저나트륨혈증이 있으면 결과를 기다리지 말고 투여
 3. 수액 및 전해질 (Na) 교정 — 저나트륨혈증은 ACTH 결핍 시 흔함
 4. 시력 저하가 심하거나 진행, 의식 저하 시 응급 감압술 (신경외과 결정), 안근마비만 있거나 경미하면 보존적 치료 가능
@@ -1247,7 +1247,7 @@ reply:`상기 환자 저나트륨혈증 (Na ___ mmol/L, 발생 시기: 급성(<4
 3. Na q2–4h (3% 투여 중), 이후 q4–6h 측정, 시간당 소변량 확인 (>100 mL/h이면 수분 이뇨로 과교정 위험)
 
 [과교정 시]
-1. D5W 10 mL/kg 1시간 투여 ± desmopressin 2 µg IV (q6–8h 필요 시) — 한도 이내로 재저하
+1. D5W 10 mL/kg 1시간 투여 ± desmopressin 2 mcg IV (1–2분에 걸쳐, 필요 시 q8h) — 한도 이내로 재저하
 
 [만성 무증상]
 1. 원인 교정 우선 (원인 약제 중단, 저용적이면 NS, SIADH는 별도 회신 참조)`,
@@ -1312,7 +1312,7 @@ reply:`상기 환자 고칼륨혈증 (K ___ mmol/L, ECG: ________, Cr ___, HCO3 
 [K ≥6.5 mmol/L 또는 ECG 변화 (뾰족한 T파, PR 연장, QRS 확장)]
 1. 10% calcium gluconate 30 mL IV 10분 (ECG 변화 지속 시 5–10분 후 반복)
    - Digoxin 복용 환자는 천천히 투여
-2. Regular insulin 10 U + glucose 25 g (D50W 50 mL 또는 D10W 250 mL) IV 15분
+2. Regular insulin 10 units + glucose 25 g (D50W 50 mL 또는 D10W 250 mL) IV 15분
    - 투여 전 혈당 <126 mg/dL이면 이후 D10W 50 mL/h 5시간 추가
    - 혈당 매시간 6시간 측정 (특히 CKD·투석 환자 저혈당 고위험)
 3. Salbutamol 10–20 mg nebulizer (보조, 단독 사용 금지)
@@ -1378,7 +1378,7 @@ reply:`상기 환자 저칼륨혈증 (K ___, 혈압 ___, Mg ___, HCO3 ___)으로
 [갑작스러운 사지 마비 + 저칼륨혈증 (특히 젊은 남성)]
 1. 갑상선중독성 주기성마비 의심 → TSH, free T4 즉시 확인
 2. KCl은 소량 (예: 10 mEq/h 이하, 총 ≤40–60 mEq) 투여 — 회복기 반동성 고칼륨혈증 위험
-3. Propranolol 1–2 mg/kg 경구 (분할) 또는 정주 투여로 발작 호전·예방, 원인 갑상선중독증 치료
+3. Propranolol 경구 1–2 mg/kg/일 분할 투여로 발작 호전·예방 (정주가 필요하면 1 mg씩 1분 이상에 걸쳐, 10분 간격, 총 3–5 mg 이내 — 경구 용량을 정주로 투여하지 않도록 주의), 원인 갑상선중독증 치료
 4. 탄수화물 과식·음주·격한 운동 후 유발 — 갑상선기능 정상화 시 재발 소실
 
 검사 결과 확인 후 본과 외래에서 추적하겠습니다.`,
@@ -1405,32 +1405,32 @@ sec:[
 {t:'crit',title:'진단 기준 및 중증도',items:['혈당 ≥200 mg/dL 또는 당뇨병 병력 (SGLT2 억제제 복용 시 혈당 정상 가능 — euglycemic DKA)','케톤: 혈중 β-hydroxybutyrate ≥3.0 mmol/L 또는 요 케톤 2+ 이상','산증: pH <7.3 및/또는 HCO3 <18 mmol/L'],
  extra:`<div class="sevg"><div class="sev s1"><b>경증</b>pH 7.25–7.30 · HCO3 15–18 · 의식 명료</div><div class="sev s2"><b>중등도</b>pH 7.00–7.24 · HCO3 10–15 · 의식 명료/졸림</div><div class="sev s3"><b>중증 → ICU</b>pH &lt;7.00 · HCO3 &lt;10 · 혼미/혼수, 쇼크, K &lt;3.5 또는 &gt;6.0</div></div>`},
 {t:'calc',title:'Anion gap · 삼투압 · 교정 Na 계산',html:CALC_DKA},
-{t:'steps',title:'초기 60분',items:['ABC, 정맥로 2개 확보, 심전도 모니터, 체중 측정','즉시 혈당·VBG·전해질·β-OHB 채혈 (결과 기다리지 않고 수액 시작)','<b>수액</b>: NS (또는 balanced crystalloid) 15–20 mL/kg (1–1.5 L) 첫 1시간','<b>K 확인 후 인슐린 결정</b>: K &lt;3.5이면 인슐린 보류, KCl 10–20 mEq/h 먼저 보충','<b>인슐린</b>: regular insulin 0.1 U/kg/h 지속 정주 (bolus 없이) — bolus 0.1 U/kg 후 0.1 U/kg/h도 가능','유발요인 탐색: 감염, 인슐린 누락, 급성 심근경색·뇌졸중, 췌장염, 약제 (SGLT2i, 스테로이드, 항정신병약, 면역관문억제제), 신규 발병 제1형']},
+{t:'steps',title:'초기 60분',items:['ABC, 정맥로 2개 확보, 심전도 모니터, 체중 측정','즉시 혈당·VBG·전해질·β-OHB 채혈 (결과 기다리지 않고 수액 시작)','<b>수액</b>: NS (또는 balanced crystalloid) 15–20 mL/kg (1–1.5 L) 첫 1시간','<b>K 확인 후 인슐린 결정</b>: K &lt;3.5이면 인슐린 보류, KCl 10–20 mEq/h 먼저 보충','<b>인슐린</b>: regular insulin 0.1 units/kg/h 지속 정주 (bolus 없이) — bolus 0.1 units/kg IV (1–2분에 걸쳐) 후 0.1 units/kg/h도 가능','유발요인 탐색: 감염, 인슐린 누락, 급성 심근경색·뇌졸중, 췌장염, 약제 (SGLT2i, 스테로이드, 항정신병약, 면역관문억제제), 신규 발병 제1형']},
 {t:'labs',title:'검사',groups:[['즉시',['혈당','VBG/ABGA','Na·K·Cl·HCO3','BUN·Cr','β-OHB','혈청 삼투압','CBC','ECG','요검사']],['원인·합병증',['lipase','CK','Ca·P·Mg','troponin','혈액·소변 배양','CXR','HbA1c','소변 hCG (가임기)']],['신규 진단 시',['C-peptide','GAD·IA-2·ZnT8 항체']]]},
 {t:'order',title:'초기 처방 Order set',text:`[DKA initial order]  체중 ___ kg
 1. NPO (의식 명료 시 소량 물 허용), I/O check, V/S q1h, 신경학적 평가 q2h
 2. 0.9% NaCl 1,000 mL IV over 1 hr
-   → 이후 250–500 mL/h (교정 Na 정상·상승 시 0.45% NaCl)
+   → 이후 ___ mL/h (250–500 범위에서 의사 지정; 교정 Na 정상·상승 시 0.45% NaCl)
 3. KCl
-   - K <3.5   : 인슐린 보류, KCl 10–20 mEq/h IV (중심정맥 권장), K ≥3.5 되면 인슐린 시작
+   - K <3.5   : 인슐린 보류, KCl IV (말초 ≤10 mEq/h, 중심정맥 ≤20 mEq/h), K ≥3.5 되면 인슐린 시작
    - K 3.5–5.0: 수액 1 L당 KCl 20–40 mEq 혼합, 목표 K 4–5
    - K >5.0   : 보충 없이 q2h 재측정
-4. RI 100 U + NS 100 mL (1 U/mL) IV ___ mL/h  (= 0.1 U/kg/h)
+4. Regular insulin 100 units + NS 100 mL (1 unit/mL) IV ___ mL/h, 시린지 펌프  (= 0.1 units/kg/h)
 5. BST q1h, Electrolyte·VBG·β-OHB q2–4h, P/Mg q6–12h
 6. BST <250 mg/dL:
-   - 수액을 D5W/0.45% NaCl (+KCl) 150–250 mL/h로 변경
-   - RI 0.05 U/kg/h로 감량, 목표 BST 150–200 mg/dL
+   - 수액을 D5W/0.45% NaCl (+KCl) ___ mL/h로 변경 (150–250 범위에서 의사 지정)
+   - Regular insulin ___ mL/h (= 0.05 units/kg/h)로 감량, 목표 BST 150–200 mg/dL
 7. Notify: BST <100 또는 >400, K <3.5 또는 >5.5, 의식 변화, 소변량 <0.5 mL/kg/h`},
 {t:'table',title:'인슐린 정주 조정',head:['상황','조치'],rows:[
- ['혈당 감소 <50 mg/dL/h (수액 충분)','인슐린 25–50% 증량 (또는 1 U/h)'],
+ ['혈당 감소 <50 mg/dL/h (수액 충분)','인슐린 25–50% 증량 (또는 1 unit/h)'],
  ['혈당 감소 >100 mg/dL/h','인슐린 감량하지 말고 dextrose 추가·증량 고려'],
- ['혈당 <250 mg/dL','RI 0.05 U/kg/h + D5W 포함 수액'],
- ['혈당 <150 mg/dL, 산증 지속','D10W로 증량 — <b>인슐린은 산증 해소까지 중단 금지</b> (최소 0.02–0.05 U/kg/h)'],
- ['경증~중등도, 혈역학 안정, 의식 명료','병동에서 SC rapid-acting 0.2 U/kg → 0.1 U/kg q1h (또는 0.3 → 0.2 U/kg q2h) 프로토콜 가능']]},
+ ['혈당 <250 mg/dL','Regular insulin 0.05 units/kg/h + D5W 포함 수액'],
+ ['혈당 <150 mg/dL, 산증 지속','D10W로 증량 — <b>인슐린은 산증 해소까지 중단 금지</b> (최소 0.02–0.05 units/kg/h)'],
+ ['경증~중등도, 혈역학 안정, 의식 명료','병동에서 SC rapid-acting 0.2 units/kg → 0.1 units/kg q1h (또는 0.3 → 0.2 units/kg q2h) 프로토콜 가능']]},
 {t:'list',title:'보조 치료',items:['<b>중탄산염</b>: pH &lt;7.0일 때만 — NaHCO3 100 mmol을 증류수 400 mL (+KCl 20 mEq)에 섞어 2시간 정주, 2시간 후 pH 재평가','<b>인산</b>: P &lt;1.0 mg/dL 또는 심부전·호흡부전·용혈 동반 시 K-phosphate 20–30 mEq 보충','<b>혈전 예방</b>: 고삼투·탈수 동반 시 LMWH 고려']},
-{t:'ok',title:'해소 기준 및 피하 인슐린 전환',items:['해소: 혈당 &lt;250 mg/dL + β-OHB &lt;0.6 mmol/L + venous pH ≥7.3 또는 HCO3 ≥18 mmol/L','경구 섭취 가능하면 피하 전환 — <b>기저인슐린 투여 1–2시간 후 정주 인슐린 중단</b>','기존 인슐린 사용자: 기존 용량 재개 (조절 불량이었다면 조정) / 신규: TDD 0.5–0.6 U/kg (기저 50% + 식사 50%)','대안: 입원 초기부터 glargine 0.15–0.3 U/kg SC 병용 → 전환 시 반동 고혈당 감소']},
+{t:'ok',title:'해소 기준 및 피하 인슐린 전환',items:['해소: 혈당 &lt;250 mg/dL + β-OHB &lt;0.6 mmol/L + venous pH ≥7.3 또는 HCO3 ≥18 mmol/L','경구 섭취 가능하면 피하 전환 — <b>기저인슐린 투여 1–2시간 후 정주 인슐린 중단</b>','기존 인슐린 사용자: 기존 용량 재개 (조절 불량이었다면 조정) / 신규: TDD 0.5–0.6 units/kg (기저 50% + 식사 50%)','대안: 입원 초기부터 glargine 0.15–0.3 units/kg SC 병용 → 전환 시 반동 고혈당 감소']},
 {t:'fu',title:'퇴원 및 추적',items:['유발요인 교정 (인슐린 누락 원인, 감염, 약제)','교육: sick day rule, 혈중/요 케톤 측정, 인슐린 절대 중단 금지, 저혈당 대처','SGLT2 억제제: DKA 발생 시 원칙적으로 재사용 지양','신규 제1형 의심: 자가항체, C-peptide, CGM 처방 및 교육','퇴원 1–2주 내 본과 외래, 2–4주 후 HbA1c 아닌 혈당 기록으로 조정']},
-{t:'warn',title:'주의 (Pitfalls)',items:['저칼륨혈증: 인슐린 시작 후 K 급감 → 부정맥 — K 확인 전 인슐린 금지','혈당 정상화 후 인슐린 조기 중단 → DKA 재발 (dextrose 병용하며 유지)','뇌부종 (소아·젊은 성인): 두통, 의식 저하, 서맥·고혈압 → mannitol 0.5–1 g/kg IV, 과도한 저장성 수액·급속 삼투압 저하 피함','다량 NS → 고염소성 산증: HCO3 회복이 늦어 보이면 β-OHB·anion gap으로 판단','SGLT2i euDKA: 혈당 &lt;250이면 처음부터 dextrose와 인슐린 병용']}
+{t:'warn',title:'주의 (Pitfalls)',items:['저칼륨혈증: 인슐린 시작 후 K 급감 → 부정맥 — K 확인 전 인슐린 금지','혈당 정상화 후 인슐린 조기 중단 → DKA 재발 (dextrose 병용하며 유지)','뇌부종 (소아·젊은 성인): 두통, 의식 저하, 서맥·고혈압 → mannitol 0.5–1 g/kg IV (15–20분에 걸쳐), 과도한 저장성 수액·급속 삼투압 저하 피함','다량 NS → 고염소성 산증: HCO3 회복이 늦어 보이면 β-OHB·anion gap으로 판단','SGLT2i euDKA: 혈당 &lt;250이면 처음부터 dextrose와 인슐린 병용']}
 ],ref:'Umpierrez GE et al. Hyperglycemic crises in adults with diabetes: a consensus report. Diabetes Care 2024;47:1257; JBDS-IP DKA guideline 2023'},
 
 /* 2 HHS */
@@ -1439,7 +1439,7 @@ summary:'극심한 고혈당·고삼투압·탈수, 케톤산증은 경미. 수�
 sec:[
 {t:'crit',title:'진단 기준',items:['혈당 ≥600 mg/dL','유효 삼투압 (2×Na + 혈당/18) &gt;300 mOsm/kg (총 삼투압 &gt;320)','β-OHB &lt;3.0 mmol/L, pH ≥7.3, HCO3 ≥15 mmol/L','DKA와 혼합형 흔함 — 두 기준 모두 확인','고령, 감염, 뇌졸중, 심근경색, 스테로이드·thiazide·항정신병약 등이 흔한 유발요인']},
 {t:'calc',title:'삼투압 · 교정 Na 계산',html:CALC_DKA.replace(/k_/g,'h_').replace(/calcDKA/g,'calcHHS')},
-{t:'steps',title:'초기 치료',items:['<b>수액</b>: NS 1 L/h 첫 1–2시간 → 이후 250–500 mL/h (총 결손 100–220 mL/kg, 첫 12시간 양성 수분균형 3–6 L 목표)','교정 Na 상승·정상이고 삼투압 저하가 멈추면 0.45% NaCl로 변경','<b>인슐린</b>: 수액만으로 혈당 감소가 멈출 때 (&lt;90 mg/dL/h) 시작 — regular insulin 0.05 U/kg/h (케톤 &gt;1.0 mmol/L 동반 시 즉시 시작)','<b>K</b>: DKA와 동일 기준 (K &lt;3.5이면 인슐린 보류)','<b>혈전 예방</b>: 금기 없으면 LMWH 예방 용량','유발요인 치료 (감염, 뇌졸중, 심근경색 평가)']},
+{t:'steps',title:'초기 치료',items:['<b>수액</b>: NS 1 L/h 첫 1–2시간 → 이후 250–500 mL/h (총 결손 100–220 mL/kg, 첫 12시간 양성 수분균형 3–6 L 목표)','교정 Na 상승·정상이고 삼투압 저하가 멈추면 0.45% NaCl로 변경','<b>인슐린</b>: 수액만으로 혈당 감소가 멈출 때 (&lt;90 mg/dL/h) 시작 — regular insulin 0.05 units/kg/h (케톤 &gt;1.0 mmol/L 동반 시 즉시 시작)','<b>K</b>: DKA와 동일 기준 (K &lt;3.5이면 인슐린 보류)','<b>혈전 예방</b>: 금기 없으면 LMWH 예방 용량','유발요인 치료 (감염, 뇌졸중, 심근경색 평가)']},
 {t:'labs',title:'검사',groups:[['즉시',['혈당','혈청 삼투압 (측정·계산)','Na·K·Cl·HCO3','BUN·Cr','β-OHB','VBG','CBC','ECG']],['합병증',['CK (횡문근융해)','troponin','lipase','배양','CXR','뇌 CT (국소 신경학적 결손 시)']]]},
 {t:'table',title:'목표 속도 및 모니터링',head:['지표','목표','측정 주기'],rows:[
  ['혈당','감소 ≤90–100 mg/dL/h, 첫 24시간 180–270 mg/dL 유지 (혈당 &lt;300 시 D5W 추가)','q1h'],
@@ -1457,15 +1457,16 @@ sec:[
 summary:'의식 저하가 동반된 저혈당 (Level 3). 즉시 포도당을 투여하고, 원인 약제의 작용 시간만큼 재발을 막는다.',
 sec:[
 {t:'crit',title:'정의',items:['Level 1: 혈당 &lt;70 mg/dL','Level 2: 혈당 &lt;54 mg/dL','Level 3 (중증): 혈당과 무관하게 의식·신체 기능 변화로 타인의 도움이 필요한 경우']},
-{t:'steps',title:'즉시 조치',items:['혈당 확인 (측정이 지연되면 바로 치료)','의식 명료 + 삼킴 가능: 포도당 15–20 g 경구 → 15분 후 재측정, &lt;70이면 반복','의식 저하·삼킴 불가, 정맥로 있음: <b>D50W 50 mL (25 g) IV</b> 또는 D10W 100–250 mL (10–25 g) — 비당뇨인 원인 평가가 필요하면 투여 전 채혈','정맥로 없음: <b>glucagon 1 mg IM/SC</b> (또는 비강 3 mg) — 알코올·기아(글리코겐 고갈)에서는 효과 제한','알코올 중독·영양결핍: thiamine 100 mg IV를 포도당과 함께 또는 먼저','15분 후 재측정 → 회복 후 식사 또는 D10W 50–100 mL/h 유지 (지속형 인슐린·sulfonylurea·CKD)']},
+{t:'steps',title:'즉시 조치',items:['혈당 확인 (측정이 지연되면 바로 치료)','의식 명료 + 삼킴 가능: 포도당 15–20 g 경구 → 15분 후 재측정, &lt;70이면 반복','의식 저하·삼킴 불가, 정맥로 있음: <b>D50W 50 mL (25 g) IV — 큰 정맥, 2–5분에 걸쳐 서서히</b> 또는 D10W 100–250 mL (10–25 g, 10–15분에 걸쳐) — 비당뇨인 원인 평가가 필요하면 투여 전 채혈','정맥로 없음: <b>glucagon 1 mg IM (또는 SC)</b> (또는 비강 3 mg) — 알코올·기아(글리코겐 고갈)에서는 효과 제한','알코올 중독·영양결핍: thiamine 100 mg IV (NS 100 mL 희석, 30분에 걸쳐)를 포도당과 함께 또는 먼저','15분 후 재측정 → 회복 후 식사 또는 D10W 50–100 mL/h 유지 (지속형 인슐린·sulfonylurea·CKD)']},
 {t:'order',title:'처방 Order set',text:`[중증 저혈당]
-1. D50W 50 mL IV push (또는 D10W 250 mL IV over 10–15 min)
+1. D50W 50 mL IV — 큰 정맥, 2–5분에 걸쳐 서서히 (수초 내 급속 주입 금지)
+   또는 D10W 250 mL IV over 10–15 min
 2. BST 15분 후 재측정 → <70 mg/dL이면 1 반복
-3. 회복 후 D10W 50–100 mL/h 지속 (BST 100–180 mg/dL 유지)
+3. 회복 후 D10W ___ mL/h 지속 (50–100 범위에서 의사 지정) (BST 100–180 mg/dL 유지)
 4. BST q15min (>100 mg/dL 2회 연속까지) → q1h × 4–6h → q2–4h
 5. 인슐린·sulfonylurea·glinide 보류
 6. Sulfonylurea 유발 / 반복 저혈당:
-   Octreotide 50–100 µg SC q6–12h (또는 25–50 µg/h IV)
+   Octreotide ___ mcg SC q8h (50–100 mcg 범위에서 의사 지정)
 7. K 확인 (포도당·인슐린 투여 시 저칼륨혈증)
 8. Notify: 의식 회복 지연, BST <70 반복`},
 {t:'table',title:'원인별 관찰 기간',head:['원인','관찰·주의'],rows:[
@@ -1484,21 +1485,22 @@ sec:[
 summary:'저혈압·쇼크, 저나트륨·고칼륨, 저혈당, 복통·구토. 채혈 후 즉시 hydrocortisone 100 mg IV — 결과를 기다리지 않는다.',
 sec:[
 {t:'crit',title:'의심 소견',items:['설명되지 않는 저혈압·쇼크 (수액·승압제 반응 불량)','저나트륨혈증, 고칼륨혈증 (원발성), 저혈당, 호산구 증가','오심·구토·복통 (급성 복증과 유사), 발열, 의식 저하','위험군: 부신기능저하증 기왕력, 장기 스테로이드 사용·최근 중단, 뇌하수체 질환, 면역관문억제제, 항응고제 사용 중 양측 부신출혈, 패혈증 (Waterhouse-Friderichsen)']},
-{t:'steps',title:'즉시 조치 (진단 전에도 시행)',items:['채혈: cortisol, ACTH (+ renin, aldosterone) — 채혈이 치료를 지연시키지 않게','<b>Hydrocortisone 100 mg IV bolus</b>','이후 hydrocortisone 200 mg/24h 지속 정주 (또는 50 mg IV q6h)','<b>수액</b>: NS 1 L 첫 1시간 → 이후 활력징후에 따라 (첫 24시간 3–4 L 흔히 필요, 심부전 주의)','저혈당: D50W 50 mL IV, 이후 포도당 포함 수액','유발요인 평가 및 치료 (감염 배양, 항생제)']},
+{t:'steps',title:'즉시 조치 (진단 전에도 시행)',items:['채혈: cortisol, ACTH (+ renin, aldosterone) — 채혈이 치료를 지연시키지 않게','<b>Hydrocortisone 100 mg IV bolus (3–5분에 걸쳐)</b>','이후 hydrocortisone 200 mg/24h 지속 정주 (또는 50 mg IV q6h (각 3–5분에 걸쳐))','<b>수액</b>: NS 1 L 첫 1시간 → 이후 활력징후에 따라 (첫 24시간 3–4 L 흔히 필요, 심부전 주의)','저혈당: D50W 50 mL IV (2–5분에 걸쳐 서서히), 이후 포도당 포함 수액','유발요인 평가 및 치료 (감염 배양, 항생제)']},
 {t:'order',title:'처방 Order set',text:`[Adrenal crisis]
 1. Lab (치료 전): cortisol, ACTH, renin, aldosterone, Na/K, glucose, Cr, CBC/diff, TSH
-2. Hydrocortisone 100 mg IV bolus STAT
+2. Hydrocortisone 100 mg IV bolus STAT (3–5분에 걸쳐 서서히 주사)
 3. Hydrocortisone 200 mg + NS 50 mL IV continuous over 24 hr
-   (또는 Hydrocortisone 50 mg IV q6h)
-4. 0.9% NaCl 1,000 mL IV over 1 hr → 이후 V/S에 따라 150–250 mL/h
-5. BST q2–4h, 저혈당 시 D50W 50 mL IV
+   (시린지 펌프 2.1 mL/h; 희석액 안정성은 약제부 기준 확인 — 필요 시 100 mg/50 mL 12시간마다 교체)
+   (또는 Hydrocortisone 50 mg IV q6h (각 3–5분에 걸쳐))
+4. 0.9% NaCl 1,000 mL IV over 1 hr → 이후 ___ mL/h (150–250 범위, V/S 보고 의사 지정)
+5. BST q4h, 저혈당 (<70 mg/dL) 시 D50W 50 mL IV (2–5분에 걸쳐 서서히)
 6. V/S q1h, Na/K q4–6h (첫 24시간)
 7. 감염 평가: blood/urine culture, CXR
 8. Notify: SBP <90 지속, Na 24시간 >10 mmol/L 상승, 의식 변화`},
 {t:'table',title:'감량 일정 (안정 후)',head:['시기','Hydrocortisone','비고'],rows:[
- ['0–24시간','100 mg bolus → 200 mg/24h','수액 충분히'],
+ ['0–24시간','100 mg IV bolus (3–5분에 걸쳐) → 200 mg/24h 지속 정주','수액 충분히'],
  ['24–72시간 (안정)','100 mg/24h (25 mg q6h)','유발요인 조절 확인'],
- ['경구 가능','평소 용량의 2배 (예: 20-10-10 mg) 2–3일','원발성: HC ≤50 mg/일이 되면 fludrocortisone 0.05–0.1 mg 재개'],
+ ['경구 가능','평소 용량의 2배 (예: 20-10-10 mg) 2–3일','원발성: hydrocortisone ≤50 mg/일이 되면 fludrocortisone 0.05–0.1 mg 재개'],
  ['회복','유지 용량 15–25 mg/일 (2–3회 분할)','교육 후 퇴원']]},
 {t:'fu',title:'진단 확정 및 퇴원 교육',items:['미진단 환자: 회복 후 ACTH 자극검사 (hydrocortisone 24시간 보류; 급성기에 검사가 필요하면 dexamethasone 4 mg으로 임시 대체 가능 — 단 mineralocorticoid 효과 없음)','원발성: 부신 CT, 21-hydroxylase 항체, 결핵 평가 / 이차성: 뇌하수체 MRI, 타 축 평가','Sick day rule (38℃ 2배, 39℃ 3배), 구토 시 hydrocortisone 100 mg IM 자가주사 교육·처방','스테로이드 응급 카드 휴대, 수술·시술 시 의료진에게 알림','퇴원 2주 내 본과 외래']},
 {t:'warn',title:'주의 (Pitfalls)',items:['갑상선기능저하 동반 시 갑상선호르몬을 hydrocortisone보다 먼저 투여하면 위기 악화','Hydrocortisone 투여 후 수분 이뇨 → 저나트륨혈증 과교정 위험 (Na 모니터링)','Dexamethasone 단독은 mineralocorticoid 효과 없음 (원발성)','Etomidate, ketoconazole, mitotane, 강력한 CYP3A4 유도제 (rifampicin 등)는 위기 유발·용량 증량 필요']}
@@ -1517,19 +1519,20 @@ sec:[
  <label>심방세동<select id="bw6" onchange="calcBW()"><option value="0">없음</option><option value="10">있음</option></select></label>
  <label>유발요인<select id="bw7" onchange="calcBW()"><option value="0">없음</option><option value="10">있음</option></select></label>
 </div><div class="calc"><div class="out" id="bw_out"></div></div>`},
-{t:'steps',title:'치료 (동시 진행, 순서 중요)',items:['<b>β차단제</b>: propranolol 60–80 mg PO q4h (말초 T4→T3 전환 억제) / 심부전·저혈압 위험 시 esmolol 정주 (용량 적정 용이)','<b>항갑상선제</b>: PTU 500–1,000 mg 부하 → 250 mg q4h (T4→T3 전환 억제) 또는 methimazole 20 mg q4–6h (60–80 mg/일)','<b>요오드</b> (항갑상선제 투여 최소 1시간 후): SSKI 5방울 (250 mg) q6h 또는 Lugol 용액 8–10방울 q6–8h','<b>Hydrocortisone</b> 300 mg IV 부하 → 100 mg IV q8h','<b>대증</b>: acetaminophen + 냉각 (aspirin 금지 — 갑상선호르몬 유리 증가), 수액, 산소, 영양 (thiamine)','<b>유발요인</b>: 감염 (배양·항생제), 수술, 요오드 조영제, 아미오다론, 분만, DKA, 항갑상선제 임의 중단']},
+{t:'steps',title:'치료 (동시 진행, 순서 중요)',items:['<b>β차단제</b>: propranolol 60–80 mg PO q4h (말초 T4→T3 전환 억제) / 심부전·저혈압 위험 시 esmolol 정주 (용량 적정 용이)','<b>항갑상선제</b>: PTU 500–1,000 mg 부하 → 250 mg q4h (T4→T3 전환 억제) 또는 methimazole 20 mg q4–6h (60–80 mg/일)','<b>요오드</b> (항갑상선제 투여 최소 1시간 후): SSKI 5방울 (250 mg) q6h 또는 Lugol 용액 8–10방울 q6–8h','<b>Hydrocortisone</b> 300 mg IV 부하 (NS 100 mL 희석, 30분에 걸쳐) → 100 mg IV q8h (각 3–5분에 걸쳐)','<b>대증</b>: acetaminophen + 냉각 (aspirin 금지 — 갑상선호르몬 유리 증가), 수액, 산소, 영양 (thiamine)','<b>유발요인</b>: 감염 (배양·항생제), 수술, 요오드 조영제, 아미오다론, 분만, DKA, 항갑상선제 임의 중단']},
 {t:'order',title:'처방 Order set',text:`[Thyroid storm]  체중 ___ kg
 1. ICU admission, ECG monitoring, V/S q1h, BWPS q12h
-2. PTU 600 mg PO/NG loading → 250 mg PO/NG q4h
-   (또는 Methimazole 20 mg PO/NG q6h)
-3. 위 투여 1시간 후: SSKI 5 gtt (250 mg) PO q6h
-   (또는 Lugol solution 8 gtt PO q6h)
-4. Propranolol 60 mg PO/NG q4h (HR <80–90 목표, SBP <90 시 hold)
-   - 심부전/저혈압: Esmolol 250–500 µg/kg IV over 1 min → 50–100 µg/kg/min
-5. Hydrocortisone 300 mg IV loading → 100 mg IV q8h
-6. Acetaminophen 650 mg PO q6h prn fever, cooling blanket
+2. PTU 600 mg PO (경구 불가 시 L-tube) loading → 250 mg PO (경구 불가 시 L-tube) q4h
+   (또는 Methimazole 20 mg PO (경구 불가 시 L-tube) q6h)
+3. 항갑상선제 첫 투여 1시간 후: SSKI 0.25 mL (5방울 = 요오드화칼륨 250 mg) PO q6h, 물 200 mL 이상에 희석
+   (또는 Lugol 용액 ___ mL PO q6h — 원내 제형 농도 확인 후 mL로 처방)
+4. Propranolol 60 mg PO q4h (경구 불가 시 L-tube) — hold: SBP <90 또는 HR <60
+   - 심부전/저혈압 시 대신: Esmolol ___ mcg/kg IV over 1 min (250–500) → 50 mcg/kg/min 시작, 증량은 의사 지시
+5. Hydrocortisone 300 mg IV loading (NS 100 mL 희석, 30분에 걸쳐) → 100 mg IV q8h (각 3–5분에 걸쳐)
+6. Acetaminophen 650 mg PO q6h prn BT ≥38℃ (1일 최대 3 g), cooling blanket
 7. (선택) Cholestyramine 4 g PO qid — 장간순환 차단
-8. D5NS 또는 NS (탈수 정도에 따라), Thiamine 100 mg IV qd
+8. 수액: ______ (D5NS 또는 NS 중 의사 지정) ___ mL/h
+   Thiamine 100 mg IV 1일 1회 (NS 100 mL 희석, 30분에 걸쳐)
 9. Lab: TSH, fT4, T3, CBC/diff, LFT, BST, Electrolyte, Ca, BNP, troponin, cultures
 10. Notify: SBP <90, HR >140, 의식 악화, ANC <1,500, AST/ALT >3배`},
 {t:'table',title:'모니터링',head:['항목','주기','목적'],rows:[
@@ -1548,17 +1551,17 @@ sec:[
 summary:'중증 갑상선기능저하 + 의식 저하·저체온. Hydrocortisone 먼저(또는 동시), 이후 정주 levothyroxine 부하. 수동적 가온, 진정제 최소화.',
 sec:[
 {t:'crit',title:'진단 소견',items:['갑상선기능저하 (TSH 상승·fT4 저하; 중추성은 TSH 정상/낮음) + 의식 저하','저체온, 서맥, 저혈압, 저환기 (고탄산혈증)','저나트륨혈증, 저혈당, CK 상승, 심낭삼출','유발요인: 감염, 한랭 노출, 진정제·마약성 진통제, 뇌졸중, 심부전, 위장관 출혈, levothyroxine 중단, 아미오다론, lithium']},
-{t:'steps',title:'즉시 조치',items:['ICU, 기도 확보 — 고탄산혈증 시 기계환기 (조기 결정)','채혈: TSH, fT4, cortisol, ACTH 후 <b>hydrocortisone 100 mg IV q8h</b> (부신기능저하 배제 시까지)','<b>Levothyroxine IV 200–400 µg 부하</b> (고령·관상동맥질환·저체중은 저용량 200 µg)','이후 levothyroxine IV 1.6 µg/kg/일 × 0.75 (보통 50–100 µg) 매일','저체온: 담요 등 <b>수동적 재가온</b> — 적극적 외부 가온은 혈관확장성 쇼크 유발','저혈압: NS·포도당 수액 (승압제 반응은 갑상선호르몬 보충 전 저하)','저나트륨혈증: 수분 제한, Na &lt;120 + 증상 시 3% NaCl 소량','감염 평가 (발열 없어도), 경험적 항생제 고려']},
+{t:'steps',title:'즉시 조치',items:['ICU, 기도 확보 — 고탄산혈증 시 기계환기 (조기 결정)','채혈: TSH, fT4, cortisol, ACTH 후 <b>hydrocortisone 100 mg IV q8h (각 3–5분에 걸쳐)</b> (부신기능저하 배제 시까지)','<b>Levothyroxine IV 200–400 mcg 부하 (2–3분에 걸쳐)</b> (고령·관상동맥질환·저체중은 저용량 200 mcg)','이후 levothyroxine IV 1.6 mcg/kg/일 × 0.75 (보통 50–100 mcg) 매일','저체온: 담요 등 <b>수동적 재가온</b> — 적극적 외부 가온은 혈관확장성 쇼크 유발','저혈압: NS·포도당 수액 (승압제 반응은 갑상선호르몬 보충 전 저하)','저나트륨혈증: 수분 제한, Na &lt;120 + 증상 시 3% NaCl 소량','감염 평가 (발열 없어도), 경험적 항생제 고려']},
 {t:'order',title:'처방 Order set',text:`[Myxedema coma]  체중 ___ kg
 1. ICU, ECG monitoring, core temperature q1h, ABGA q4–6h
 2. Lab (투약 전): TSH, fT4, T3, cortisol, ACTH, Na, BST, Cr, CK, CBC, cultures
-3. Hydrocortisone 100 mg IV q8h
-4. Levothyroxine ___ µg IV loading (200–400 µg)
-   → Levothyroxine ___ µg IV qd (1.6 µg/kg × 0.75)
+3. Hydrocortisone 100 mg IV q8h (각 3–5분에 걸쳐)
+4. Levothyroxine ___ mcg IV loading (200–400 mcg, 2–3분에 걸쳐)
+   → Levothyroxine ___ mcg IV 1일 1회 (2–3분에 걸쳐; 용량 = 1.6 mcg/kg × 0.75, 의사가 계산하여 기입)
    * IV 제형 없으면 L-tube로 경구 제형 투여 (흡수 저하 고려)
-5. (선택, 경구 가능 시) Liothyronine 5–10 µg q8h — 고령·심질환은 2.5 µg부터
+5. (선택) Liothyronine ___ mcg PO q8h (5–10 mcg; 고령·심질환은 2.5 mcg부터, 의사 지정)
 6. 수동적 재가온 (blanket), 적극적 외부 가온 금지
-7. D5NS 또는 NS IV (저혈당·저혈압 교정), 저장성 수액 금지
+7. 수액: ______ (D5NS 또는 NS 중 의사 지정) ___ mL/h — 저장성 수액 금지
 8. 진정제·마약성 진통제 최소화 (대사 지연)
 9. BST q4h, Na q6h, fT4 q1–2일`},
 {t:'table',title:'모니터링',head:['항목','주기','주의'],rows:[
@@ -1577,18 +1580,18 @@ summary:'교정 Ca ≥14 mg/dL 또는 증상 동반 (의식 저하, AKI, 부정�
 sec:[
 {t:'crit',title:'중증도',items:['교정 Ca = 총 Ca + 0.8 × (4.0 − albumin) — 가능하면 이온화 Ca로 확인'],
  extra:`<div class="sevg"><div class="sev s1"><b>경도</b>&lt;12 mg/dL — 대개 무증상, 외래 평가</div><div class="sev s2"><b>중등도</b>12–14 mg/dL — 증상·급상승 시 입원 치료</div><div class="sev s3"><b>중증 / 위기</b>≥14 mg/dL 또는 의식 저하·AKI·부정맥</div></div>`},
-{t:'steps',title:'치료 순서',items:['유발 약제 중단: thiazide, lithium, 칼슘·비타민 D 보충제, calcitriol','<b>수액</b>: NS 1–2 L 1–2시간 (탈수 시) → 200–300 mL/h, 소변량 100–150 mL/h 유지','<b>Calcitonin</b> 4 IU/kg SC/IM q12h — 4–6시간 내 효과, 48시간 이내 사용 (tachyphylaxis)','<b>Zoledronic acid 4 mg IV</b> (15분 이상) — 효과 2–4일, 최대 4–7일 (CrCl 감량 / 대안 pamidronate 60–90 mg)','신부전·bisphosphonate 불응: <b>denosumab 120 mg SC</b>','비타민 D 매개 (림프종, 육아종): prednisolone 40–60 mg/일','교정 Ca &gt;18 mg/dL, 신경학적 증상, 핍뇨성 신부전: 저칼슘 투석액 혈액투석']},
+{t:'steps',title:'치료 순서',items:['유발 약제 중단: thiazide, lithium, 칼슘·비타민 D 보충제, calcitriol','<b>수액</b>: NS 1–2 L 1–2시간 (탈수 시) → 200–300 mL/h, 소변량 100–150 mL/h 유지','<b>Calcitonin</b> 4 units/kg SC (또는 IM) q12h — 4–6시간 내 효과, 48시간 이내 사용 (tachyphylaxis)','<b>Zoledronic acid 4 mg IV</b> (15분 이상) — 효과 2–4일, 최대 4–7일 (CrCl 감량 / 대안 pamidronate 60–90 mg)','신부전·bisphosphonate 불응: <b>denosumab 120 mg SC</b>','비타민 D 매개 (림프종, 육아종): prednisolone 40–60 mg/일','교정 Ca &gt;18 mg/dL, 신경학적 증상, 핍뇨성 신부전: 저칼슘 투석액 혈액투석']},
 {t:'order',title:'처방 Order set',text:`[Hypercalcemic crisis]  체중 ___ kg, 교정 Ca ___
-1. D/C: thiazide, lithium, Ca/Vit D 보충제, calcitriol
-2. 0.9% NaCl 1,000 mL IV over 1 hr × 1–2 → 250 mL/h
-   (소변량 100–150 mL/h 목표, 체액 과부하 시 furosemide 20–40 mg IV)
-3. Calcitonin ___ IU SC q12h × 4회 (4 IU/kg; 반응 미흡 시 8 IU/kg)
-4. Zoledronic acid 4 mg + NS 100 mL IV over 15 min × 1
+1. 중단: thiazide, lithium, Ca/Vit D 보충제, calcitriol
+2. 0.9% NaCl 1,000 mL IV over 1 hr (1회 후 재평가, 의사 지시 시 1회 추가) → ___ mL/h (200–300)
+   (소변량 100–150 mL/h 목표; 체액 과부하 시 의사 지시로 furosemide ___ mg IV, 1–2분에 걸쳐)
+3. Calcitonin ___ units SC q12h × 4회 (4 units/kg로 계산; 증량은 의사 지시)
+4. Zoledronic acid 4 mg + NS 100 mL IV over ≥15 min × 1 (15분보다 빠르게 주입 금지 — 신독성)
    (CrCl 50–60: 3.5 mg / 40–49: 3.3 mg / 30–39: 3.0 mg)
 5. (선택) Denosumab 120 mg SC × 1 — CrCl <30 또는 불응
-6. (1,25(OH)2D 상승) Prednisolone 40 mg PO qd
-7. Ca·Alb (또는 iCa), Na/K, Cr q6–12h / P, Mg qd
-8. I/O q4h, 체중 qd
+6. (1,25(OH)2D 상승) Prednisolone 40 mg PO 1일 1회
+7. Ca·Alb (또는 iCa), Na/K, Cr q6–12h / P, Mg 1일 1회
+8. I/O q4h, 체중 1일 1회
 9. Notify: 의식 악화, 소변량 <0.5 mL/kg/h, QT 단축·부정맥`},
 {t:'labs',title:'원인 감별 검사',groups:[['1차',['intact PTH','PTHrP','25(OH)D','1,25(OH)2D','P','Mg','ALP','Cr']],['악성·기타',['SPEP/UPEP·free light chain','TSH','ACE','골스캔/PET','vitamin A']],['약제 확인',['thiazide','lithium','calcitriol·비타민 D 과량','칼슘제']]]},
 {t:'fu',title:'추적',items:['Zoledronic acid 재투여는 최소 7일 이후','치료 후 저칼슘혈증 (특히 denosumab, 비타민 D 결핍 동반) 모니터링','PTH 의존성 (원발성 부갑상선기능항진증 위기): 안정화 후 조기 부갑상선절제술, 수술 전 cinacalcet','악성 고칼슘혈증: 원인 종양 치료 + 재발 시 반복 bisphosphonate/denosumab']},
@@ -1600,16 +1603,16 @@ sec:[
 summary:'테타니·후두경련·경련·QT 연장 또는 교정 Ca <7.5 mg/dL. Calcium gluconate 정주, Mg 교정, 원인에 따라 calcitriol.',
 sec:[
 {t:'crit',title:'정의 및 증상',items:['교정 Ca &lt;7.5 mg/dL 또는 이온화 Ca &lt;0.8 mmol/L, 또는 증상 동반','증상: 손발·입 주위 저림, 근육 경련, 수족 경련 (Trousseau·Chvostek), 후두경련, 기관지경련, 경련발작, QT 연장, 심부전','원인: 갑상선·부갑상선 수술 후, hungry bone, 저마그네슘혈증, 비타민 D 결핍, 신부전, 급성 췌장염, 횡문근융해·종양용해 (고인산혈증), 약제 (denosumab, zoledronic acid, foscarnet, cinacalcet), 대량 수혈 (구연산)']},
-{t:'steps',title:'치료',items:['ECG 모니터링, 이온화 Ca·Mg·P·Cr 확인','<b>Bolus</b>: 10% calcium gluconate 1–2 g (10–20 mL)을 D5W 50–100 mL에 희석하여 10–20분 정주 — 증상 지속 시 반복','<b>지속 정주</b>: elemental Ca 0.5–1.5 mg/kg/h (calcium gluconate 11 g/1 L ≈ 1 mg/mL)','<b>Mg 교정</b>: Mg &lt;1.6 mg/dL이면 MgSO4 2 g IV 10–20분 후 필요 시 반복 (신기능 고려)','<b>경구 병행</b>: elemental Ca 1–3 g/일 분할 + calcitriol 0.25–0.5 µg bid (PTH 결핍·CKD)','비타민 D 결핍: cholecalciferol 보충 (calcitriol과 별개)']},
+{t:'steps',title:'치료',items:['ECG 모니터링, 이온화 Ca·Mg·P·Cr 확인','<b>Bolus</b>: 10% calcium gluconate 1–2 g (10–20 mL)을 D5W 50–100 mL에 희석하여 10–20분 정주 — 증상 지속 시 반복','<b>지속 정주</b>: elemental Ca 0.5–1.5 mg/kg/h (calcium gluconate 11 g/1 L ≈ 1 mg/mL)','<b>Mg 교정</b>: Mg &lt;1.6 mg/dL이면 Magnesium sulfate 2 g IV 10–20분 후 필요 시 반복 (신기능 고려)','<b>경구 병행</b>: elemental Ca 1–3 g/일 분할 + calcitriol 0.25–0.5 mcg bid (PTH 결핍·CKD)','비타민 D 결핍: cholecalciferol 보충 (calcitriol과 별개)']},
 {t:'order',title:'처방 Order set',text:`[Acute hypocalcemia]  체중 ___ kg
 1. ECG monitoring
-2. 10% Calcium gluconate 20 mL (2 g) + D5W 100 mL IV over 15 min
+2. 10% Calcium gluconate 20 mL (2 g) + D5W 100 mL IV over 15 min (주입 펌프; 직접 IV push 금지)
 3. 10% Calcium gluconate 110 mL (11 g) + D5W 890 mL (≈1 mg/mL elemental Ca)
    IV ___ mL/h  (0.5–1.5 mg/kg/h; 체중 60 kg → 30–90 mL/h)
-4. MgSO4 2 g + NS 100 mL IV over 20 min (Mg <1.6 mg/dL)
-5. Calcium carbonate 1,250 mg (elemental 500 mg) PO tid–qid
-6. Calcitriol 0.25–0.5 µg PO bid (부갑상선기능저하·CKD)
-7. iCa 또는 Ca·Alb q4–6h (정주 중), Mg·P qd
+4. Magnesium sulfate 2 g + NS 100 mL IV over 20 min (Mg <1.6 mg/dL)
+5. Calcium carbonate 1,250 mg (elemental 500 mg) PO tid (식후)
+6. Calcitriol ___ mcg PO bid (0.25–0.5 mcg, 의사 지정) (부갑상선기능저하·CKD)
+7. iCa 또는 Ca·Alb q4–6h (정주 중), Mg·P 1일 1회
 8. 정주 칼슘과 중탄산염·인산염 같은 라인 투여 금지
 9. Notify: 테타니·후두경련, QTc >500 ms, Ca >10 mg/dL`},
 {t:'table',title:'특수 상황',head:['상황','주의점'],rows:[
@@ -1636,15 +1639,15 @@ sec:[
 {t:'steps',title:'중증 증상 시 즉시 치료',items:['<b>3% NaCl 150 mL IV 20분</b> → 20분 후 Na 재측정','Na 5 mmol/L 상승 또는 증상 호전될 때까지 2–3회 반복','목표 도달 후 3% 중단, NS 소량으로 정맥로 유지, 원인 평가 시작','중등도 증상: 3% NaCl 150 mL 1회 후 재평가','첫 24시간 상승폭 ≤10 mmol/L (첫 5 mmol/L 상승 후에는 Na 130까지 서두르지 않음)']},
 {t:'labs',title:'원인 평가 (치료와 동시에)',groups:[['혈액',['혈청 삼투압','혈당','Na·K·Cl·HCO3','BUN·Cr','요산','TSH','아침 cortisol','지질·단백']],['소변',['요 삼투압','요 Na','요 K']],['임상',['체액 상태','약제 (thiazide, SSRI, carbamazepine, 항정신병약, desmopressin)','통증·구토·수술 후','폐·중추신경계 질환']]]},
 {t:'order',title:'처방 Order set',text:`[Severe symptomatic hyponatremia]  체중 ___ kg, Na ___
-1. 3% NaCl 150 mL IV over 20 min → Na 재측정 (20분 후)
+1. 3% NaCl 150 mL IV over 20 min (주입 펌프 450 mL/h) → Na 재측정 (20분 후)
    * Na 5 mmol/L 상승 또는 증상 호전까지 최대 3회
 2. Na q2h (3% 투여 중) → q4–6h
 3. I/O q1h — 소변량 >100 mL/h 지속 시 notify (수분 이뇨 → 과교정)
-4. 원인 약제 D/C: ________
+4. 원인 약제 중단: ________
 5. Na 상승 한도: 24시간 ≤10 mmol/L (고위험군 ≤8)
 6. 과교정 시 (한도 초과):
    - D5W 10 mL/kg (___ mL) IV over 1 hr
-   - Desmopressin 2 µg IV q6–8h (재저하 목표: 한도 이내로)
+   - Desmopressin 2 mcg IV (1–2분에 걸쳐), 의사 지시 시 q8h 반복 (재저하 목표: 한도 이내로)
 7. Notify: 경련, 의식 악화, Na 6시간 내 >6 mmol/L 상승`},
 {t:'table',title:'교정 한도',head:['대상','24시간 상승 한도','비고'],rows:[
  ['일반','≤10 mmol/L (이후 24시간마다 ≤8)','첫 24시간 4–6 mmol/L 상승이면 충분'],
@@ -1665,13 +1668,14 @@ sec:[
  <label>목표 교정 (mmol/L/24h)<input type="number" id="f_t" value="10" oninput="calcFW()"></label>
  <div class="out" id="f_out"></div></div>`},
 {t:'crit',title:'원인 분류',items:['<b>수분 섭취 부족</b>: 고령·의식 저하·갈증 장애 (가장 흔함)','<b>신외 수분 손실</b>: 발열, 설사, 화상 — 요 삼투압 &gt;600','<b>신장 손실</b>: 삼투성 이뇨 (고혈당, mannitol, 고단백 경관영양, 요소), loop 이뇨제','<b>요붕증</b>: 다뇨 (&gt;3 L/일) + 요 삼투압 &lt;300 — 중추성 (뇌하수체 수술·외상·종양), 신성 (lithium, 고칼슘혈증, 저칼륨혈증)','<b>Na 과부하</b>: 고장성 수액, NaHCO3 (드묾)']},
-{t:'steps',title:'치료',items:['쇼크·저혈량이면 먼저 NS로 순환 회복','자유수 보충: 경구/경관 물 또는 D5W (고혈당 시 0.45% NaCl), 수분 결손 + 지속 손실 (불감 손실 약 30–40 mL/h + 소변) 합산','<b>교정 속도</b>: 만성·불명 → 24시간 ≤10 mmol/L / 급성 (&lt;48시간, 예: 수술 후 요붕증) → 1 mmol/L/h까지 가능, Na 145 목표','<b>중추성 요붕증</b>: desmopressin 1–2 µg IV/SC (또는 경구 0.1 mg, 설하 60–120 µg), 다뇨 재발 시 재투여','Desmopressin 투여 후 요 삼투압 &gt;50% 상승 → 중추성, 변화 없음 → 신성']},
+{t:'steps',title:'치료',items:['쇼크·저혈량이면 먼저 NS로 순환 회복','자유수 보충: 경구/경관 물 또는 D5W (고혈당 시 0.45% NaCl), 수분 결손 + 지속 손실 (불감 손실 약 30–40 mL/h + 소변) 합산','<b>교정 속도</b>: 만성·불명 → 24시간 ≤10 mmol/L / 급성 (&lt;48시간, 예: 수술 후 요붕증) → 1 mmol/L/h까지 가능, Na 145 목표','<b>중추성 요붕증</b>: desmopressin 1–2 mcg IV (또는 SC) (또는 경구 0.1 mg, 설하 60–120 mcg), 다뇨 재발 시 재투여','Desmopressin 투여 후 요 삼투압 &gt;50% 상승 → 중추성, 변화 없음 → 신성']},
 {t:'order',title:'처방 Order set',text:`[Hypernatremia]  체중 ___ kg, Na ___
 1. D5W ___ mL/h IV  (= 수분 결손 ÷ 교정시간 + 지속 손실)
    * 경구/L-tube 가능 시 물 ___ mL q4h로 대체 가능
 2. Na q4h (초기 q2h), BST q6h (D5W 고속 투여 시 고혈당)
 3. I/O q1h, 요비중·요 삼투압
-4. (중추성 요붕증) Desmopressin 1 µg SC/IV prn
+4. (중추성 요붕증) Desmopressin 1 mcg SC prn (정맥로만 가능 시 IV, 1–2분에 걸쳐)
+   - 투여 간격 최소 8시간, 매 투여 전 Na 확인 (Na <140이면 hold 후 notify)
    - 기준: 소변량 >250 mL/h × 2시간 + 요비중 <1.005
 5. Na 24시간 하강 한도 ≤10 mmol/L (만성)
 6. Notify: Na 하강 >0.5 mmol/L/h (만성), 경련, 의식 변화`},
@@ -1684,17 +1688,17 @@ summary:'K ≥6.5 또는 ECG 변화 → calcium으로 심근 보호, insulin-glu
 sec:[
 {t:'crit',title:'중증도 (UKKA 2023)',items:['가성 고칼륨혈증 배제: 용혈, 혈소판·백혈구 현저 증가, 주먹 쥐기 — ECG 변화 있으면 치료 먼저'],
  extra:`<div class="sevg"><div class="sev s1"><b>경도</b>5.5–5.9 mmol/L</div><div class="sev s2"><b>중등도</b>6.0–6.4 mmol/L</div><div class="sev s3"><b>중증</b>≥6.5 mmol/L 또는 ECG 변화 (뾰족 T, PR 연장, P 소실, QRS 확장, 서맥)</div></div>`},
-{t:'steps',title:'치료 단계',items:['<b>심근 보호</b> (K ≥6.5 또는 ECG 변화): 10% calcium gluconate 30 mL IV 10분 — 5–10분 후 ECG 변화 지속 시 반복','<b>세포내 이동</b>: regular insulin 10 U + glucose 25 g IV 15분 / 투여 전 혈당 &lt;126 mg/dL이면 D10W 50 mL/h 5시간','보조: salbutamol 10–20 mg nebulizer (단독 사용 금지), 대사성 산증 시 NaHCO3','<b>제거</b>: sodium zirconium cyclosilicate 10 g tid (≤72h) / patiromer 8.4 g qd / calcium polystyrene sulfonate 15–30 g','체액 과다 시 loop 이뇨제, 불응·핍뇨성 AKI·말기신부전 → 응급 투석','원인 약제 중단 및 원인 평가']},
+{t:'steps',title:'치료 단계',items:['<b>심근 보호</b> (K ≥6.5 또는 ECG 변화): 10% calcium gluconate 30 mL IV 10분 — 5–10분 후 ECG 변화 지속 시 반복','<b>세포내 이동</b>: regular insulin 10 units + glucose 25 g IV 15분 / 투여 전 혈당 &lt;126 mg/dL이면 D10W 50 mL/h 5시간','보조: salbutamol 10–20 mg nebulizer (단독 사용 금지), 대사성 산증 시 NaHCO3','<b>제거</b>: sodium zirconium cyclosilicate 10 g tid (≤72h) / patiromer 8.4 g 1일 1회 / calcium polystyrene sulfonate 15–30 g','체액 과다 시 loop 이뇨제, 불응·핍뇨성 AKI·말기신부전 → 응급 투석','원인 약제 중단 및 원인 평가']},
 {t:'order',title:'처방 Order set',text:`[Hyperkalemia — K ≥6.5 or ECG change]
 1. ECG monitoring, 12-lead ECG
-2. 10% Calcium gluconate 30 mL IV over 10 min (ECG 변화 지속 시 5–10분 후 반복)
-3. RI 10 U + D50W 50 mL (glucose 25 g) IV over 15 min
+2. 10% Calcium gluconate 30 mL (3 g) IV over 10 min (ECG 변화 지속 시 의사 확인 후 반복)
+3. Regular insulin 10 units + D50W 50 mL (glucose 25 g) 혼합하여 IV over 15 min (주입 펌프 200 mL/h)
    * 투여 전 BST <126 mg/dL → D10W 50 mL/h × 5 hr
 4. BST q1h × 6 hr (특히 2–3시간째 저혈당)
 5. Salbutamol 10 mg nebulizer (보조)
 6. Sodium zirconium cyclosilicate 10 g PO tid (최대 72시간)
 7. K 재측정: 1, 2, 4, 6, 24시간
-8. D/C: KCl, ACEi/ARB, MRA, NSAID, TMP-SMX, K 함유 수액
+8. 중단: KCl, ACEi/ARB, MRA, NSAID, TMP-SMX, K 함유 수액
 9. Notify: K ≥6.5 지속, QRS 확장, 서맥, BST <70`},
 {t:'table',title:'약제별 발현·지속',head:['약제','발현','지속','기전'],rows:[
  ['Calcium gluconate','1–3분','30–60분','막 안정 (K 불변)'],
@@ -1712,20 +1716,22 @@ sec:[
 summary:'K <2.5 또는 근력저하·부정맥. Mg 함께 교정, 포도당 없는 수액에 KCl. 갑상선중독성 주기성마비는 소량 KCl + 비선택적 β차단제.',
 sec:[
 {t:'crit',title:'중증 기준',items:['K &lt;2.5 mmol/L, 또는 K &lt;3.0 + 증상 (근력 저하, 마비, 횡문근융해, 장마비)','ECG: U파, ST 하강, QT(U) 연장, 심실성 부정맥 — digoxin 복용·심질환자 고위험','<b>갑상선중독성 주기성마비 (TPP)</b>: 젊은 동아시아 남성, 탄수화물 과식·음주·운동 후 야간/새벽 급성 사지 근위부 마비 + 저칼륨 — TSH 즉시 확인']},
-{t:'steps',title:'치료',items:['ECG 모니터링','<b>정주 KCl</b>: 말초정맥 ≤10 mEq/h (농도 ≤40 mEq/L), 중심정맥 + 심전도 감시 시 ≤20 mEq/h','<b>희석액은 NS</b> — 포도당 수액은 인슐린 분비로 K를 더 낮춤','<b>Mg</b> &lt;1.6 mg/dL: MgSO4 2 g IV — Mg 미교정 시 K 교정 불응','경구 가능하면 KCl 40–80 mEq/일 분할 병행','<b>TPP</b>: KCl은 소량 (10 mEq/h 이하, 총 ≤40–60 mEq) — 세포내 이동이 원인이라 회복 시 반동 고칼륨혈증 / propranolol 1–2 mg/kg 경구 분할 (또는 1 mg IV 반복)이 핵심']},
+{t:'steps',title:'치료',items:['ECG 모니터링','<b>정주 KCl</b>: 말초정맥 ≤10 mEq/h (농도 ≤40 mEq/L), 중심정맥 + 심전도 감시 시 ≤20 mEq/h','<b>희석액은 NS</b> — 포도당 수액은 인슐린 분비로 K를 더 낮춤','<b>Mg</b> &lt;1.6 mg/dL: Magnesium sulfate 2 g IV — Mg 미교정 시 K 교정 불응','경구 가능하면 KCl 40–80 mEq/일 분할 병행','<b>TPP</b>: KCl은 소량 (10 mEq/h 이하, 총 ≤40–60 mEq) — 세포내 이동이 원인이라 회복 시 반동 고칼륨혈증 / propranolol 경구 1–2 mg/kg/일 분할 (정주 시 1 mg씩 1분 이상에 걸쳐, 10분 간격, 총 3–5 mg 이내)이 핵심']},
 {t:'order',title:'처방 Order set',text:`[Severe hypokalemia]
 1. ECG monitoring
-2. KCl 40 mEq + NS 1,000 mL IV 100–250 mL/h (말초: ≤10 mEq/h)
+2. KCl 40 mEq + NS 1,000 mL IV ___ mL/h (말초 최대 250 mL/h = KCl 10 mEq/h)
    * 중심정맥: KCl 20 mEq + NS 100 mL IV over 1 hr, 반복
-3. MgSO4 2 g + NS 100 mL IV over 1 hr (Mg <1.6)
+3. Magnesium sulfate 2 g + NS 100 mL IV over 1 hr (Mg <1.6)
 4. KCl 20 mEq PO tid (경구 가능 시)
-5. K q2–4h (정주 중), Mg qd
+5. K q2–4h (정주 중), Mg 1일 1회
 6. Lab: TSH, fT4, Mg, VBG(HCO3), 요 K/Cr, (고혈압 시) aldosterone·renin
 7. Notify: K <2.5 지속, 부정맥, 호흡근 약화
 
 [Thyrotoxic periodic paralysis 추가]
 - KCl 총량 ≤40–60 mEq, K q1–2h (반동 고칼륨 감시)
-- Propranolol 40 mg PO q6h (또는 1 mg IV q10min, 최대 3–5 mg)
+- Propranolol 40 mg PO q6h
+  (경구 불가 시: Propranolol 1 mg IV, 1분 이상에 걸쳐, 최소 10분 간격, 총 ___ mg까지 [최대 5 mg])
+  - hold: HR <60 또는 SBP <90
 - 갑상선중독증 원인 치료 (methimazole)`},
 {t:'labs',title:'원인 평가',groups:[['기본',['Mg','HCO3 (VBG)','요 K/Cr','요 Cl','TSH·fT4','혈당','CK']],['고혈압 동반',['aldosterone','renin (ARR)','cortisol 평가','감초 섭취력']],['정상 혈압',['이뇨제·완하제','구토','Gitelman/Bartter (요 Ca, Mg)','신세관산증 (요 pH)']]]},
 {t:'warn',title:'주의 (Pitfalls)',items:['TPP에서 공격적 KCl 보충 → 회복기 반동 고칼륨혈증 (약 40%)','포도당 수액에 KCl 혼합 → K 추가 저하','저칼륨 상태의 ARR은 위음성 → 교정 후 원발성 알도스테론증 선별','DKA 치료 중 저칼륨: 인슐린 보류 기준 준수']}
@@ -1736,7 +1742,7 @@ sec:[
 summary:'갑작스런 극심한 두통 + 시력·시야장애·안근마비 ± 의식 저하. 채혈 후 hydrocortisone 100 mg IV, 시력 악화·의식 저하 시 응급 감압.',
 sec:[
 {t:'crit',title:'임상 양상',items:['돌발 두통 (벼락두통), 구토, 수막자극 징후','시력 저하·시야 결손 (양측두 반맹), 안근마비 (III &gt; VI &gt; IV), 의식 저하','급성 ACTH 결핍 → 저혈압·저나트륨혈증 (주요 사망 원인)','유발요인: 항응고제, 수술 (특히 심장수술), dopamine 효현제 시작·중단, GnRH 효현제, 자극검사, 두부외상, 임신','진단: MRI (CT로 놓칠 수 있음), 지주막하출혈과 감별']},
-{t:'steps',title:'즉시 조치',items:['채혈: cortisol, ACTH, TSH, fT4, PRL, IGF-1, GH, LH/FSH, testosterone/estradiol, Na, 혈당, 삼투압','<b>Hydrocortisone 100–200 mg IV bolus</b> → 50–100 mg IV q6h (또는 2–4 mg/h 지속 정주) — 활력징후 불안정, 의식 변화, 시력 저하, 저나트륨혈증이면 결과 기다리지 않음','수액 및 Na 교정, 혈당 확인','신경외과·안과 협진: 시력·시야·안근 평가 (매일)','항응고제 사용 중이면 지혈 가능 여부 평가']},
+{t:'steps',title:'즉시 조치',items:['채혈: cortisol, ACTH, TSH, fT4, PRL, IGF-1, GH, LH/FSH, testosterone/estradiol, Na, 혈당, 삼투압','<b>Hydrocortisone 100–200 mg IV bolus (3–5분에 걸쳐)</b> → 50–100 mg IV q6h (각 3–5분에 걸쳐) (또는 2–4 mg/h 지속 정주) — 활력징후 불안정, 의식 변화, 시력 저하, 저나트륨혈증이면 결과 기다리지 않음','수액 및 Na 교정, 혈당 확인','신경외과·안과 협진: 시력·시야·안근 평가 (매일)','항응고제 사용 중이면 지혈 가능 여부 평가']},
 {t:'table',title:'수술 vs 보존적 치료',head:['소견','권장'],rows:[
  ['심한 시력 저하, 시야 결손 진행·악화','응급 감압술 (가능하면 7일 이내, 이상적으로 조기)'],
  ['의식 저하 지속·악화','응급 감압술'],
@@ -1745,9 +1751,9 @@ sec:[
 {t:'order',title:'처방 Order set',text:`[Pituitary apoplexy]
 1. Lab (치료 전): cortisol, ACTH, TSH, fT4, PRL, IGF-1, GH, LH, FSH,
    testosterone/E2, Na, K, BST, serum/urine osm
-2. Hydrocortisone 100 mg IV STAT → 50 mg IV q6h
-3. 0.9% NaCl 1,000 mL IV (저혈압 시 bolus)
-4. V/S q1h, 의식 q1h, 시력·시야·안근 qd (안과)
+2. Hydrocortisone 100 mg IV STAT (3–5분에 걸쳐 서서히 주사) → 50 mg IV q6h (각 3–5분에 걸쳐)
+3. 0.9% NaCl 1,000 mL IV ___ mL/h (저혈압 시 500 mL를 15–30분에 걸쳐 투여 후 재평가)
+4. V/S q1h, 의식 q1h, 시력·시야·안근 1일 1회 (안과)
 5. I/O q1h, Na q6–12h (요붕증·SIADH)
 6. Sella MRI with contrast
 7. 신경외과 협진 (응급)
@@ -1761,15 +1767,17 @@ sec:[
 summary:'카테콜아민 과다로 인한 고혈압 위기 또는 쇼크·심근병증·다장기부전. α차단 먼저, β차단은 나중. 위기 중 응급 수술은 피하고 안정화 후 수술.',
 sec:[
 {t:'crit',title:'임상 양상',items:['고혈압 위기 (혈압 급등·변동), 두통, 발한, 빈맥 — 고전적 3징후','쇼크·저혈압 (고혈압과 교대), 카테콜아민 심근병증 (Takotsubo 유사), 폐부종, 급성 심근경색 양상','다장기부전 (갈색세포종 다장기 위기): 고열, 뇌병증, 신부전, 젖산산증','유발요인: 고용량 glucocorticoid, metoclopramide·D2 차단제, β차단제 단독, 3환계 항우울제, 마취·종양 조작, 생검, 운동·복압']},
-{t:'steps',title:'치료',items:['ICU, 동맥혈압 감시, 유발 약제 중단','<b>고혈압 위기</b>: phentolamine 1–5 mg IV bolus 5–10분마다 반복 → 필요 시 지속 정주 / 또는 nicardipine 5 mg/h 시작, 15분마다 2.5 mg/h 증량 (최대 15 mg/h) / 또는 nitroprusside','<b>빈맥성 부정맥</b>: α차단 확보 후 esmolol 정주','<b>쇼크·심근병증</b>: 수액, 심초음파, 필요 시 승압제·강심제, 불응 시 ECMO 등 기계적 순환보조','혈당 (고혈당 → 수술 후 저혈당), 젖산, 트로포닌 모니터링','안정화 후 경구 α차단제 (doxazosin) 10–14일 → 예정 수술']},
+{t:'steps',title:'치료',items:['ICU, 동맥혈압 감시, 유발 약제 중단','<b>고혈압 위기</b>: phentolamine 1–5 mg IV bolus (1분에 걸쳐) 5–10분마다 반복 → 필요 시 지속 정주 / 또는 nicardipine 5 mg/h 시작, 15분마다 2.5 mg/h 증량 (최대 15 mg/h) / 또는 nitroprusside','<b>빈맥성 부정맥</b>: α차단 확보 후 esmolol 정주','<b>쇼크·심근병증</b>: 수액, 심초음파, 필요 시 승압제·강심제, 불응 시 ECMO 등 기계적 순환보조','혈당 (고혈당 → 수술 후 저혈당), 젖산, 트로포닌 모니터링','안정화 후 경구 α차단제 (doxazosin) 10–14일 → 예정 수술']},
 {t:'order',title:'처방 Order set',text:`[Pheochromocytoma crisis]
 1. ICU, arterial line, ECG monitoring
 2. Lab: plasma free metanephrines (치료 전 가능하면), troponin, CK, lactate,
    BST, Cr, Electrolyte, ABGA
-3. Phentolamine 2.5 mg IV bolus q5–10min prn SBP >180 (최대 반복 후 지속 정주)
-   또는 Nicardipine 25 mg/250 mL NS: 5 mg/h 시작, q15min 2.5 mg/h 증량 (max 15)
-4. HR >120 지속 & α차단 확보 후: Esmolol 50–100 µg/kg/min IV
-5. D/C: β차단제 단독, metoclopramide, 고용량 스테로이드, TCA
+3. Phentolamine 2.5 mg IV (1분에 걸쳐) prn SBP >180, 최소 5분 간격
+   - 3회 투여 후에도 SBP >180이면 notify (지속 정주 여부 의사 결정)
+   또는 Nicardipine 25 mg/250 mL NS (0.1 mg/mL): 5 mg/h (= 50 mL/h) 시작,
+   q15min 2.5 mg/h (= 25 mL/h)씩 증량, 최대 15 mg/h (= 150 mL/h)
+4. HR >120 지속 & α차단 확보 후: Esmolol 50 mcg/kg/min IV 시작, 증량은 의사 지시
+5. 중단: β차단제 단독, metoclopramide, 고용량 스테로이드, TCA
 6. Echocardiography, adrenal CT (비조영 HU 포함)
 7. BST q2–4h
 8. Notify: SBP >200 또는 <90, 흉통, 폐부종, 의식 변화`},
@@ -1790,7 +1798,7 @@ function _dka(p){
   const o=document.getElementById(p+'out'); if(!o)return;
   const ag=na-(cl+hc), osm=2*na+g/18+bun/2.8, eff=2*na+g/18;
   const cn16=na+1.6*(g-100)/100, cn24=na+2.4*(g-100)/100;
-  o.innerHTML=`Anion gap <b>${ag.toFixed(0)}</b> (정상 10–12) · 총 삼투압 <b>${osm.toFixed(0)}</b> · 유효 삼투압 <b>${eff.toFixed(0)}</b> mOsm/kg${eff>300?' <span style="color:#c53030;font-weight:700">(&gt;300)</span>':''}<br>교정 Na <b>${cn16.toFixed(0)}</b> (Katz 1.6) ~ <b>${cn24.toFixed(0)}</b> (Hillier 2.4) mmol/L · 인슐린 0.1 U/kg/h = <b>${(_v(p+'wt')*0.1).toFixed(1)} U/h</b>`;
+  o.innerHTML=`Anion gap <b>${ag.toFixed(0)}</b> (정상 10–12) · 총 삼투압 <b>${osm.toFixed(0)}</b> · 유효 삼투압 <b>${eff.toFixed(0)}</b> mOsm/kg${eff>300?' <span style="color:#c53030;font-weight:700">(&gt;300)</span>':''}<br>교정 Na <b>${cn16.toFixed(0)}</b> (Katz 1.6) ~ <b>${cn24.toFixed(0)}</b> (Hillier 2.4) mmol/L · 인슐린 0.1 units/kg/h = <b>${(_v(p+'wt')*0.1).toFixed(1)} units/h</b>`;
 }
 function calcDKA(){_dka('k_')} function calcHHS(){_dka('h_')}
 function calcBW(){let s=0;for(let i=1;i<=7;i++)s+=_v('bw'+i);
@@ -2006,9 +2014,9 @@ function cycleFs(){fsi=(fsi+1)%3;LS.set(K_FS,fsi);applyFs();document.querySelect
 function calcIns(){
   const w=+document.getElementById('wt').value||0,f=+document.getElementById('fac').value,pd=+document.getElementById('pd').value||0;
   const tdd=Math.round(w*f),b=Math.round(tdd/2),m=Math.round(tdd/2/3);
-  document.getElementById('insOut').innerHTML=`TDD <b>${tdd} U</b> → 기저(glargine) <b>${b} U</b> 1일 1회 + 식사 인슐린 매 식전 <b>${m} U</b>`;
+  document.getElementById('insOut').innerHTML=`TDD <b>${tdd} units</b> → 기저(glargine) <b>${b} units</b> 1일 1회 + 식사 인슐린 매 식전 <b>${m} units</b>`;
   const per=Math.min(0.1*pd/10,0.4),np=w*per;
-  document.getElementById('npOut').innerHTML=`아침 NPH 시작 <b>${Math.round(np)} U</b> (${per.toFixed(2)} U/kg)${pd>=40?' — 최대치 적용':''}`;
+  document.getElementById('npOut').innerHTML=`아침 NPH 시작 <b>${Math.round(np)} units</b> (${per.toFixed(2)} units/kg)${pd>=40?' — 최대치 적용':''}`;
 }
 function calcCa(){
   const ca=+document.getElementById('tca').value,al=+document.getElementById('alb').value,w=+document.getElementById('cwt').value||0;
