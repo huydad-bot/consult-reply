@@ -167,6 +167,25 @@ table.tbl{border-collapse:separate;border-spacing:0;width:100%;font-size:.85rem;
 .bw{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
 .bw label{font-size:.78rem;color:var(--muted);font-weight:600;display:flex;flex-direction:column;gap:2px}
 .bw select{border:1px solid var(--line);border-radius:8px;padding:5px;font:inherit;font-size:.85rem}
+.abbr{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#f8fafc;font-size:.8rem;overflow:hidden}
+.abbr .ah{font-weight:700;color:#475569;padding:5px 12px;background:#eef2f6;font-size:.76rem;letter-spacing:.3px}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:0 16px;padding:6px 12px 8px}
+.agrid div{padding:3px 0;border-bottom:1px dotted #e2e8f0;color:#334155;line-height:1.45}
+.agrid b{display:inline-block;min-width:62px;margin-right:6px;color:var(--pri);font-weight:700}
+.abbr.inq{margin:12px 16px 0}
+.abbr.inp{margin:0;border:0;background:none}.abbr.inp .ah{display:none}.abbr.inp .agrid{padding:0}
+.search input{width:190px!important}
+.abox{position:relative}
+.abox input{border:0;border-radius:20px;padding:7px 14px;font:inherit;font-size:.88rem;width:150px;background:#fef9c3;color:var(--ink)}
+.abox input::placeholder{color:#8a7a2e}
+.adrop{display:none;position:absolute;right:0;top:calc(100% + 6px);width:min(400px,92vw);max-height:360px;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.2);z-index:60;padding:4px}
+.adrop.show{display:block}
+.ai{display:flex;gap:10px;padding:7px 10px;border-radius:8px;font-size:.85rem;color:var(--ink);align-items:baseline}
+.ai:nth-child(odd){background:#f8fafc}
+.ai b{flex:none;min-width:70px;color:var(--pri)}
+.ai.none{color:var(--muted)}
+.abanner{margin:16px 0 0;padding:9px 14px;background:#fefce8;border:1px solid #fde68a;border-radius:10px;font-size:.9rem;display:flex;gap:8px;align-items:center}
+.abanner b{color:var(--pri)}
 /* ---------- misc ---------- */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:#1f2937;color:#fff;padding:9px 20px;border-radius:22px;font-size:.88rem;opacity:0;transition:.25s;pointer-events:none;z-index:99;box-shadow:var(--sh2)}
 .toast.show{opacity:1;transform:translateX(-50%)}
@@ -206,7 +225,8 @@ mark{background:#fef08a;border-radius:2px}
   <div class="logo">KNUH<small>내분비대사내과</small></div>
   <div class="htitle"><h1>타과 의뢰 회신 · 내분비 응급 프로토콜</h1><p>본 의뢰/회신 문안들과 프로토콜은 진료 보조용 초안이다.<br>환자별 특성·중증도, 약제 급여 기준 및 수급 상황을 고려하여 담당의가 반드시 확인·수정한 후 사용한다.</p></div>
   <div class="htools">
-    <div class="search"><input id="q" placeholder="검색 (예: 데노수맙, DKA, 3%)" oninput="render()"></div>
+    <div class="search"><input id="q" placeholder="검색 (데노수맙, DKA…)" oninput="render()"></div>
+    <div class="abox"><input id="ab" placeholder="약어 (예: TDD)" autocomplete="off" oninput="abSearch()" onfocus="abSearch()"><div class="adrop" id="adrop"></div></div>
     <button class="hbtn" onclick="openModal()">＋ 문안 추가</button>
     <button class="hbtn" onclick="toggleSet()">설정</button>
     <button class="hbtn" onclick="cycleFs()" title="글자 크기 100→125→150%">가<sup>+</sup></button>
@@ -291,7 +311,7 @@ ad:`<h3>부신기능저하증 — 수술·급성질환 시 hydrocortisone(hydroc
 </table><div style="font-size:.8rem;color:var(--muted);margin-top:4px">hydrocortisone ≥50 mg/일 투여 중에는 fludrocortisone 생략 가능(경구 재개 시 함께 재개). 외인성 스테로이드 장기 사용자(prednisolone ≥5 mg/일 ≥4주)도 HPA 억제 가능성 있어 동일 원칙 적용.</div>`,
 op:`<h3>골다공증 약제별 침습적 치과 시술(발치·임플란트) 요약</h3>
 <table><tr><th>약제</th><th>MRONJ</th><th>시술 전후 권장</th></tr>
-<tr><td>경구 BP (alendronate, risedronate, ibandronate)</td><td>매우 낮음</td><td>&lt;4년·위험인자 없음: 휴약 없이 시술<br>≥4년 또는 스테로이드·당뇨·흡연 등: 골절위험 허용 시 시술 전 2개월 휴약 고려, 골치유 후 재개</td></tr>
+<tr><td>경구 비스포스포네이트 (alendronate, risedronate, ibandronate)</td><td>매우 낮음</td><td>&lt;4년·위험인자 없음: 휴약 없이 시술<br>≥4년 또는 스테로이드·당뇨·흡연 등: 골절위험 허용 시 시술 전 2개월 휴약 고려, 골치유 후 재개</td></tr>
 <tr><td>Zoledronic acid 5 mg (연 1회)</td><td>매우 낮음</td><td>다음 투여 전에 시술 계획, 다음 투여는 치유 확인 후로 연기</td></tr>
 <tr><td>Denosumab 60 mg (6개월)</td><td>매우 낮음</td><td><b>임의 중단 금지</b>(반동성 다발 척추골절). 투여 주기 후반(마지막 투여 후 ~3–4개월)에 시술, 다음 투여는 치유 후 — 마지막 투여 후 7개월 넘기지 않음</td></tr>
 <tr><td>Romosozumab</td><td>보고 있음</td><td>시술 전후 투여 1–2회 연기 고려, 종료 후 항흡수제 후속치료 필수</td></tr>
@@ -1813,6 +1833,59 @@ function calcFW(){const na=_v('f_na'),w=_v('f_wt'),f=_v('f_f'),t=_v('f_t'),o=doc
   o.innerHTML=`자유수 결손 <b>${(def/1000).toFixed(1)} L</b> · D5W 1 L당 Na <b>${drop.toFixed(1)} mmol/L</b><br>24시간 ${t} mmol/L 하강에 필요한 D5W ≈ <b>${L.toFixed(1)} L/24h (${Math.round(L*1000/24)} mL/h)</b> + 지속 손실 (불감 30–40 mL/h + 소변)`}
 function initProtoCalcs(){calcDKA();calcHHS();calcBW();calcPNa();calcFW()}
 
+/* ============================== ABBREVIATIONS ============================== */
+const ABBR_RAW=[
+// 투여·처방
+['IV','정맥 투여 (intravenous)'],['IM','근육 주사 (intramuscular)'],['SC','피하 주사 (subcutaneous)'],['PO','경구 투여 (per os)'],
+['NPO','금식 (nil per os)'],['STAT','즉시 시행'],['PRN','필요 시 투여 (pro re nata)'],['prn','필요 시 투여 (pro re nata)'],
+['bid','1일 2회'],['tid','1일 3회'],['qid','1일 4회'],['q○h','○시간마다 (예: q6h = 6시간마다)','q\\d+(?:–\\d+)?(?:h|min)'],
+['V/S','활력징후 (vital signs)','V/S'],['I/O','섭취량·배설량 (intake/output)','I/O'],['BT','체온 (body temperature)'],['HR','심박수 (heart rate)'],['SBP','수축기 혈압'],['GCS','글래스고 혼수 척도'],['ABC','기도·호흡·순환 (airway, breathing, circulation)'],
+['ICU','중환자실'],['HDU','준중환자실 (high dependency unit)'],['ECMO','체외막산소공급'],
+// 수액·전해질
+['NS','생리식염수 (0.9% NaCl)'],['D5W','5% 포도당 수액'],['D10W','10% 포도당 수액'],['D50W','50% 포도당 수액'],['D5NS','5% 포도당 + 생리식염수'],
+['NaCl','염화나트륨'],['KCl','염화칼륨'],['NaHCO3','중탄산나트륨'],['HCO3','혈중 중탄산 (bicarbonate)'],['TBW','총 체수분 (total body water)'],
+['SZC','sodium zirconium cyclosilicate (칼륨 결합제, Lokelma)'],['CPS','calcium polystyrene sulfonate (칼륨 결합제)'],
+// 검사
+['BST','모세혈 혈당 측정 (bedside sugar test)'],['ABGA','동맥혈 가스분석'],['VBG','정맥혈 가스분석'],['CBC','일반혈액검사'],['LFT','간기능 검사'],
+['BUN','혈중 요소질소'],['Cr','크레아티닌'],['eGFR','추정 사구체여과율'],['CrCl','크레아티닌 청소율'],['UACR','소변 알부민/크레아티닌 비'],
+['CK','크레아틴키나아제'],['ALP','알칼리성 인산분해효소'],['AST','aspartate aminotransferase'],['ALT','alanine aminotransferase'],['ANC','절대 호중구 수'],
+['BNP','B형 나트륨이뇨펩티드'],['INR','국제 표준화 비율 (warfarin 효과 지표)'],['β-OHB','β-hydroxybutyrate (혈중 케톤)','OHB'],['hCG','인간 융모성 생식선자극호르몬 (임신 검사)'],
+['ECG','심전도'],['QTc','교정 QT 간격'],['QRS','심실 탈분극 파형'],['CXR','흉부 X선'],['CT','전산화단층촬영'],['MRI','자기공명영상'],
+['PET-CT','양전자방출단층촬영-CT'],['SPECT','단일광자방출단층촬영'],['FDG','F-18 fluorodeoxyglucose'],['HU','Hounsfield unit (CT 감쇠값)'],
+// 당뇨병
+['TDD','총 일일 인슐린 용량 (total daily dose)'],['NPH','중간형 인슐린 (neutral protamine Hagedorn)'],['ICR','탄수화물 대 인슐린 비 (insulin-to-carbohydrate ratio)'],['ISF','교정계수 — 인슐린 1단위당 혈당 감소량 (insulin sensitivity factor)'],
+['CGM','연속혈당측정 (continuous glucose monitoring)'],['AID','자동 인슐린 주입 (automated insulin delivery)'],['HbA1c','당화혈색소'],['OGTT','경구 포도당 부하검사'],
+['GDM','임신성 당뇨병'],['T2D','제2형 당뇨병'],['DKA','당뇨병성 케톤산증'],['euDKA','정상혈당 케톤산증 (euglycemic DKA)'],['HHS','고혈당 고삼투압 상태'],
+['SGLT2','나트륨-포도당 공수송체 2 (SGLT2i = 억제제)','SGLT2i?'],['DPP-4','dipeptidyl peptidase-4 (억제제)'],['GLP-1 RA','GLP-1 수용체 작용제','GLP-1(?: RA)?'],
+['TZD','thiazolidinedione'],['SU','sulfonylurea'],['TPN','완전 정맥영양 (total parenteral nutrition)'],['GAD','glutamic acid decarboxylase (제1형 자가항체)'],
+// 부신·뇌하수체
+['ACTH','부신피질자극호르몬'],['HPA','시상하부-뇌하수체-부신 (축)'],['DST','dexamethasone 억제검사'],['MACS','경도 자율 코티솔 분비'],
+['ARR','알도스테론/레닌 비'],['17-OHP','17-hydroxyprogesterone','17-OHP|OHP'],['DHEA-S','dehydroepiandrosterone sulfate'],['PPGL','갈색세포종·부신경절종'],
+['PRL','프로락틴'],['GH','성장호르몬'],['IGF-1','인슐린유사성장인자-1'],['IGF-2','인슐린유사성장인자-2 (비섬세포종양 저혈당)'],['LH','황체형성호르몬'],['FSH','난포자극호르몬'],['GnRH','생식선자극호르몬 방출호르몬'],
+['TSS','경접형동 수술 (transsphenoidal surgery)'],['POD','수술 후 일수 (postoperative day)'],['DI','요붕증 (diabetes insipidus)'],['SIADH','항이뇨호르몬 부적절 분비 증후군'],['ADH','항이뇨호르몬'],
+['CSW','뇌염분소실 (cerebral salt wasting)'],['SAH','지주막하출혈'],['TBI','외상성 뇌손상'],['PAS','뇌하수체 졸중 점수 (Pituitary Apoplexy Score)'],
+// 갑상선
+['TSH','갑상선자극호르몬'],['fT4','유리 T4'],['T4','thyroxine'],['T3','triiodothyronine'],['TRAb','TSH 수용체 항체'],['PTU','propylthiouracil'],
+['SSKI','포화 요오드화칼륨 용액'],['BWPS','Burch–Wartofsky 점수 (갑상선 폭풍)'],['TPP','갑상선중독성 주기성마비'],['ICI','면역관문억제제'],['irAE','면역관련 이상반응'],
+['K-TIRADS','한국 갑상선 초음파 판독체계'],
+// 칼슘·골
+['PTH','부갑상선호르몬'],['PTHrP','부갑상선호르몬 관련 펩티드'],['PHPT','원발성 부갑상선기능항진증'],['FHH','가족성 저칼슘뇨성 고칼슘혈증'],
+['25(OH)D','25-수산화비타민 D (비타민 D 저장 지표)','25\\(OH\\)D'],['1,25(OH)2D','1,25-이수산화비타민 D (활성형)','1,25\\(OH\\)2D'],
+['SPEP','혈청 단백 전기영동'],['UPEP','소변 단백 전기영동'],['BMD','골밀도'],['CTX','C-말단 텔로펩티드 (골흡수 표지자)'],
+['MRONJ','약물 관련 턱뼈괴사'],['ZOL','zoledronic acid'],['SERM','선택적 에스트로겐 수용체 조절제'],['HRT','호르몬 치료'],
+// 순환기·약물
+['DAPT','이중 항혈소판 요법'],['PCI','경피적 관상동맥 중재술'],['ACS','급성 관상동맥 증후군'],['DOAC','직접 경구 항응고제'],['LMWH','저분자량 헤파린'],
+['VTE','정맥혈전색전증'],['AF','심방세동'],['P2Y12','P2Y12 수용체 억제제 (clopidogrel 등)'],['NSAID','비스테로이드성 소염진통제'],
+['ACE','안지오텐신 전환효소 (ACEi = 억제제)','ACEi?'],['ARB','안지오텐신 수용체 차단제'],['RAAS','레닌-안지오텐신-알도스테론계 (RAASi = 억제제)','RAASi?'],['MRA','미네랄코르티코이드 수용체 길항제'],
+['TMP-SMX','trimethoprim-sulfamethoxazole'],['PPI','양성자펌프억제제'],['SSRI','선택적 세로토닌 재흡수 억제제'],['SNRI','세로토닌·노르에피네프린 재흡수 억제제'],['TCA','삼환계 항우울제'],
+['CYP3A4','간 약물대사효소 CYP3A4'],['CKD','만성콩팥병'],['AKI','급성 신손상']
+];
+const ABBR=ABBR_RAW.map(([k,v,p])=>({k,v,re:new RegExp('(?<![A-Za-z0-9])(?:'+(p||k.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&'))+')(?![A-Za-z0-9])')}));
+function stripTags(t){return String(t).replace(/<[^>]+>/g,' ')}
+function abbrList(text){const t=stripTags(text);return ABBR.filter(a=>a.re.test(t))}
+function abbrHTML(text,cls){const l=abbrList(text);if(!l.length)return '';
+  return `<div class="abbr ${cls||''}"><div class="ah">약어</div><div class="agrid">${l.map(a=>`<div><b>${a.k}</b>${a.v}</div>`).join('')}</div></div>`}
+
 /* ============================== STORAGE ============================== */
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const K_EDIT='consultReply.edits',K_CUST='consultReply.custom',K_SET='consultReply.settings',K_FS='consultReply.fs';
@@ -1823,7 +1896,7 @@ let settings=LS.get(K_SET,{useHead:true,useFoot:true,
 let curCat=LS.get('consultReply.cat','emg'), curProto=LS.get('consultReply.proto','dka');
 if(curCat==='all')curCat='emg';
 const ICON={dm:'DM',ad:'AD',op:'OP',ca:'Ca',ap:'AP',pit:'Pit',el:'Na·K',th:'Th',custom:'＋'};
-const STY={crit:['진단','#2b6cb0'],steps:['조치','#c53030'],labs:['검사','#6b46c1'],order:['처방','#1c4f82'],table:['표','#0f766e'],list:['추가','#b7791f'],calc:['계산','#2c7a7b'],ok:['해소·전환','#2f855a'],fu:['추적','#4a5568'],warn:['주의','#c53030']};
+const STY={abbr:['약어','#64748b'],crit:['진단','#2b6cb0'],steps:['조치','#c53030'],labs:['검사','#6b46c1'],order:['처방','#1c4f82'],table:['표','#0f766e'],list:['추가','#b7791f'],calc:['계산','#2c7a7b'],ok:['해소·전환','#2f855a'],fu:['추적','#4a5568'],warn:['주의','#c53030']};
 
 function allItems(){return ITEMS.concat(custom)}
 function getReply(it){return edits[it.id]!=null?edits[it.id]:it.reply}
@@ -1860,6 +1933,7 @@ function render(){
   if(q){const pm=PROTOS.filter(p=>JSON.stringify(p).toLowerCase().includes(q));
     if(pm.length){any=true;h=`<div class="cathead" style="--c:#c53030"><span class="cic">!</span><div><h2>응급 프로토콜 검색 결과</h2><span class="cnt">${pm.map(p=>`<a href="#" onclick="openProto('${p.id}');return false" style="color:#c53030;font-weight:600;margin-right:10px">${p.name}</a>`).join('')}</span></div></div>`+h}}
   if(!any)h='<div class="empty">검색 결과가 없습니다.</div>';
+  h=abBanner(q)+h;
   document.getElementById('main').innerHTML=h;
   document.querySelectorAll('textarea.reply').forEach(autosize);
   if(document.getElementById('insOut'))calcIns();
@@ -1897,15 +1971,16 @@ function renderProto(){
   if(!list.find(p=>p.id===curProto)&&list.length)curProto=list[0].id;
   const p=list.find(x=>x.id===curProto);
   const side=list.map(x=>`<button class="pbtn ${x.id===curProto?'on':''}" style="--c:${x.color}" onclick="setProto('${x.id}')"><span class="pab">${x.ab}</span><span>${x.name}</span></button>`).join('');
-  document.getElementById('main').innerHTML=`<div class="pgrid"><aside class="plist"><div class="plh">내분비 응급 ${list.length}종</div>${side||'<div class="empty">검색 결과 없음</div>'}</aside><section>${p?protoHTML(p):''}</section></div>`;
+  document.getElementById('main').innerHTML=abBanner(q)+`<div class="pgrid"><aside class="plist"><div class="plh">내분비 응급 ${list.length}종</div>${side||'<div class="empty">검색 결과 없음</div>'}</aside><section>${p?protoHTML(p):''}</section></div>`;
   initProtoCalcs();
 }
 function protoHTML(p){
-  const jump=p.sec.map((s,i)=>`<a href="#${p.id}_${i}" style="--sc:${STY[s.t][1]}">${s.title}</a>`).join('');
+  const secs=p.sec;
+  const jump=secs.map((s,i)=>`<a href="#${p.id}_${i}" style="--sc:${STY[s.t][1]}">${s.title}</a>`).join('');
   return `<div class="phead" style="--c:${p.color}"><div class="pab big">${p.ab}</div><div><div class="ptags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div><h2>${p.name}</h2><p>${p.summary}</p></div>
    <div class="pact"><button onclick="copyProtoOrders('${p.id}')">처방 복사</button><button onclick="window.print()">인쇄</button></div></div>
    <div class="jump">${jump}</div>
-   ${p.sec.map((s,i)=>secHTML(s,i,p.id)).join('')}
+   ${secs.map((s,i)=>secHTML(s,i,p.id)).join('')}
    <div class="pref">${p.ref}</div>`;
 }
 function secHTML(s,i,pid){
@@ -1916,6 +1991,7 @@ function secHTML(s,i,pid){
     case 'order':b=`<div class="order"><button class="btn sm copy" onclick="copyText(this.nextElementSibling.textContent)">복사</button><pre>${esc(s.text)}</pre></div>`;break;
     case 'table':b=`<div class="tw"><table class="tbl"><thead><tr>${s.head.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${s.rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;break;
     case 'calc':b=s.html;break;
+    case 'abbr':b=s.html;break;
     default:b=s.items&&s.items.length?`<ul class="bl">${s.items.map(x=>`<li>${x}</li>`).join('')}</ul>`:'';
   }
   return `<div class="psec t-${s.t}" id="${pid}_${i}" style="--sc:${col}"><div class="psh"><span class="psl">${lab}</span><h3>${s.title}</h3></div><div class="psb">${b}${s.extra||''}</div></div>`;
@@ -2031,6 +2107,23 @@ function calcNa(){
   document.getElementById('naOut').innerHTML=`TBW ${tbw.toFixed(1)} L — 수액 1 L당 예상 Na 변화: <b>3% NaCl ${d(513)}</b> · NS ${d(154)} · Hartmann ${d(130)} · 0.45% ${d(77)} · D5W ${d(0)} mmol/L<br>3% NaCl 150 mL bolus 1회 ≈ <b>${(((513-na)/(tbw+1))*0.15).toFixed(1)} mmol/L</b> 상승`;
 }
 
+
+/* abbreviation lookup box */
+function abMatch(q){q=q.trim().toLowerCase();if(!q)return [];
+  const ex=[],pre=[],inc=[];
+  ABBR.forEach(a=>{const k=a.k.toLowerCase();
+    if(k===q||(a.k==='q○h'&&/^q\d/.test(q)))ex.push(a);else if(k.startsWith(q))pre.push(a);
+    else if(k.includes(q)||a.v.toLowerCase().includes(q))inc.push(a)});
+  return ex.concat(pre,inc).slice(0,14)}
+function abSearch(){const v=document.getElementById('ab').value,d=document.getElementById('adrop');
+  const l=abMatch(v);
+  if(!v.trim()){d.classList.remove('show');return}
+  d.innerHTML=l.length?l.map(a=>`<div class="ai"><b>${esc(a.k)}</b><span>${esc(a.v)}</span></div>`).join(''):'<div class="ai none">등록되지 않은 약어입니다</div>';
+  d.classList.add('show')}
+function abBanner(q){if(!q)return '';const a=ABBR.find(x=>x.k.toLowerCase()===q);
+  return a?`<div class="abanner"><span class="pill">약어</span><b>${esc(a.k)}</b> ${esc(a.v)}</div>`:''}
+document.addEventListener('click',e=>{if(!e.target.closest('.abox'))document.getElementById('adrop').classList.remove('show')});
+document.getElementById('ab').addEventListener('keydown',e=>{if(e.key==='Escape'){e.target.value='';abSearch();e.target.blur()}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 applyFs();bindSettings();renderTabs();render();
 </script>
