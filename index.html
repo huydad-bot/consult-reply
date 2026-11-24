@@ -204,7 +204,7 @@ mark{background:#fef08a;border-radius:2px}
 <body>
 <header><div class="hwrap">
   <div class="logo">KNUH<small>내분비대사내과</small></div>
-  <div class="htitle"><h1>타과 의뢰 회신 · 내분비 응급 프로토콜</h1><p>본 의뢰/회신 문안들과 프로토콜은 진료 보조용 초안이다. 환자별 신기능·동반질환·출혈/혈전 위험·약제 급여 기준과 원내 약제 수급 상황을 참고하여 반드시 담당의가 확인·수정하여 사용한다.</p></div>
+  <div class="htitle"><h1>타과 의뢰 회신 · 내분비 응급 프로토콜</h1><p>본 의뢰/회신 문안들과 프로토콜은 진료 보조용 초안이다.<br>환자별 특성·중증도, 약제 급여 기준 및 수급 상황을 고려하여 담당의가 반드시 확인·수정한 후 사용한다.</p></div>
   <div class="htools">
     <div class="search"><input id="q" placeholder="검색 (예: 데노수맙, DKA, 3%)" oninput="render()"></div>
     <button class="hbtn" onclick="openModal()">＋ 문안 추가</button>
@@ -1821,6 +1821,7 @@ let settings=LS.get(K_SET,{useHead:true,useFoot:true,
   head:'의뢰해 주셔서 감사합니다.',
   foot:'추가 문의 사항 있으시면 재의뢰 부탁드립니다.\n경북대학교병원 내분비대사내과 ____ 드림'});
 let curCat=LS.get('consultReply.cat','emg'), curProto=LS.get('consultReply.proto','dka');
+if(curCat==='all')curCat='emg';
 const ICON={dm:'DM',ad:'AD',op:'OP',ca:'Ca',ap:'AP',pit:'Pit',el:'Na·K',th:'Th',custom:'＋'};
 const STY={crit:['진단','#2b6cb0'],steps:['조치','#c53030'],labs:['검사','#6b46c1'],order:['처방','#1c4f82'],table:['표','#0f766e'],list:['추가','#b7791f'],calc:['계산','#2c7a7b'],ok:['해소·전환','#2f855a'],fu:['추적','#4a5568'],warn:['주의','#c53030']};
 
@@ -1834,7 +1835,6 @@ function getQ(){return document.getElementById('q').value.trim().toLowerCase()}
 function renderTabs(){
   const items=allItems();
   let h=`<button class="tab emg ${curCat==='emg'?'on':''}" onclick="setCat('emg')"><span class="ic">!</span>내분비 응급 프로토콜<span class="n">${PROTOS.length}</span></button><span class="sep"></span>`;
-  h+=`<button class="tab ${curCat==='all'?'on':''}" style="--c:#334155" onclick="setCat('all')"><span class="dot"></span>회신 문안 전체<span class="n">${items.length}</span></button>`;
   CATS.forEach(c=>{const n=items.filter(i=>i.cat===c.id).length; if(c.id==='custom'&&!n)return;
     h+=`<button class="tab ${curCat===c.id?'on':''}" style="--c:${c.color}" onclick="setCat('${c.id}')"><span class="dot"></span>${c.name}<span class="n">${n}</span></button>`});
   document.getElementById('tabs').innerHTML=h;
@@ -1845,7 +1845,7 @@ function setCat(c){curCat=c;LS.set('consultReply.cat',c);renderTabs();render();w
 function render(){
   if(curCat==='emg')return renderProto();
   const q=getQ(), items=allItems();
-  const cats=curCat==='all'?CATS:CATS.filter(c=>c.id===curCat);
+  const cats=q?CATS:CATS.filter(c=>c.id===curCat);
   let h='',any=false;
   cats.forEach(c=>{
     let list=items.filter(i=>i.cat===c.id);
@@ -1959,7 +1959,7 @@ function openModal(id){
   const it=id?findItem(id):null;
   document.getElementById('mTitle').textContent=it?'문안 편집':'새 회신 문안 추가';
   document.getElementById('mId').value=it?it.id:'';
-  sel.value=it?it.cat:(curCat!=='all'&&curCat!=='emg'?curCat:'custom');
+  sel.value=it?it.cat:(curCat!=='emg'?curCat:'custom');
   document.getElementById('mT').value=it?it.title:'';
   document.getElementById('mD').value=it?it.dept:'';
   document.getElementById('mR').value=it?it.req:'';
