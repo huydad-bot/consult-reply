@@ -1386,7 +1386,7 @@ reply:`상기 환자 고나트륨혈증 (Na ___ mmol/L, 발생 시기: 급성(<4
 
 [치료]
 1. 저혈량·쇼크가 있으면 먼저 NS로 순환 회복
-2. 자유수 결손 = TBW × (Na/140 − 1)  (TBW = 체중 × 0.5–0.6) → 본 환자 약 ___ L
+2. 자유수 결손 (free water deficit) = TBW × (Na/140 − 1)  (TBW = 체중 × 0.5–0.6) → 본 환자 약 ___ L
 3. 보충: 경구 또는 L-tube 물 우선, 정주 시 D5W (고혈당 시 0.45% NaCl)
    - 투여량 = 결손량 + 지속 손실 (불감 손실 30–40 mL/h + 소변량)
 4. 교정 속도
@@ -1400,7 +1400,7 @@ reply:`상기 환자 고나트륨혈증 (Na ___ mmol/L, 발생 시기: 급성(<4
 7. 신성 요붕증: 원인 교정 (고칼슘·저칼륨 교정, lithium 조정), 필요 시 thiazide + 저염식
 8. 의식 저하로 갈증을 표현하지 못하는 환자는 일일 수분 투여량을 처방에 명시해 주십시오.
 
-본과에서 Na 추이를 확인하며 조정하겠습니다. (응급 프로토콜 "고나트륨혈증·중추성 요붕증"에 자유수 결손 계산기 있음)`,
+본과에서 Na 추이를 확인하며 조정하겠습니다. (응급 프로토콜 "고나트륨혈증·중추성 요붕증"에 자유수 결손 (free water deficit) 계산기 있음)`,
 pearls:['만성 고나트륨혈증 급속 교정 → 뇌부종·경련','D5W 고속 투여 → 고혈당 → 삼투성 이뇨로 Na 재상승','고령·요양시설 환자의 갈증 장애·수분 접근 제한이 가장 흔한 원인','ACTH 결핍 동반 시 hydrocortisone 보충 후 요붕증이 드러날 수 있음 (masked DI)'],
 ref:'Adrogué HJ, Madias NE. Hypernatremia. NEJM 2000;342:1493; Sterns RH. Disorders of plasma sodium. NEJM 2015;372:55'},
 
@@ -1761,9 +1761,9 @@ sec:[
 
 /* 10 Hypernatremia / DI */
 {id:'na_hi',ab:'Na↑',name:'고나트륨혈증 · 중추성 요붕증',color:'#2b6cb0',tags:['병동/ICU','수분 결손 계산'],
-summary:'Na >145 mmol/L. 체액 상태 평가 후 자유수 결손을 계산하여 보충, 만성은 24시간 ≤10 mmol/L 이내로 낮춘다. 다뇨 + 저삼투 소변이면 요붕증 평가.',
+summary:'Na >145 mmol/L. 체액 상태 평가 후 자유수 결손 (free water deficit)을 계산하여 보충, 만성은 24시간 ≤10 mmol/L 이내로 낮춘다. 다뇨 + 저삼투 소변이면 요붕증 평가.',
 sec:[
-{t:'calc',title:'자유수 결손 계산',html:`<div class="calc">
+{t:'calc',title:'자유수 결손 (free water deficit) 계산',html:`<div class="calc">
  <label>혈청 Na<input type="number" id="f_na" value="158" oninput="calcFW()"></label>
  <label>체중 (kg)<input type="number" id="f_wt" value="60" oninput="calcFW()"></label>
  <label>대상<select id="f_f" onchange="calcFW()"><option value="0.6">젊은 남성 (0.6)</option><option value="0.5" selected>젊은 여성·고령 남성 (0.5)</option><option value="0.45">고령 여성 (0.45)</option></select></label>
@@ -1912,7 +1912,7 @@ function calcPNa(){const na=_v('p_na'),w=_v('p_wt'),f=_v('p_f'),o=document.getEl
   o.innerHTML=`TBW ${tbw.toFixed(1)} L · 3% NaCl 150 mL 1회 ≈ <b>+${(d(513)*0.15).toFixed(1)} mmol/L</b> · 1 L당: 3% <b>${d(513).toFixed(1)}</b> / NS ${d(154).toFixed(1)} / D5W ${d(0).toFixed(1)}<br>24시간 상한 Na <b>${na+10}</b> (고위험 ${na+8}) mmol/L · 과교정 시 D5W 10 mL/kg = <b>${Math.round(w*10)} mL</b>`}
 function calcFW(){const na=_v('f_na'),w=_v('f_wt'),f=_v('f_f'),t=_v('f_t'),o=document.getElementById('f_out');if(!o||!w)return;
   const tbw=w*f,def=tbw*(na/140-1)*1000,drop=(0-na)/(tbw+1);const L=t/(-drop);
-  o.innerHTML=`자유수 결손 <b>${(def/1000).toFixed(1)} L</b> · D5W 1 L당 Na <b>${drop.toFixed(1)} mmol/L</b><br>24시간 ${t} mmol/L 하강에 필요한 D5W ≈ <b>${L.toFixed(1)} L/24h (${Math.round(L*1000/24)} mL/h)</b> + 지속 손실 (불감 30–40 mL/h + 소변)`}
+  o.innerHTML=`자유수 결손 (free water deficit) <b>${(def/1000).toFixed(1)} L</b> · D5W 1 L당 Na <b>${drop.toFixed(1)} mmol/L</b><br>24시간 ${t} mmol/L 하강에 필요한 D5W ≈ <b>${L.toFixed(1)} L/24h (${Math.round(L*1000/24)} mL/h)</b> + 지속 손실 (불감 30–40 mL/h + 소변)`}
 function initProtoCalcs(){calcDKA();calcHHS();calcBW();calcPNa();calcFW()}
 
 /* ============================== ABBREVIATIONS ============================== */
