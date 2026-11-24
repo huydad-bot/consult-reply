@@ -27,7 +27,7 @@ header{background:linear-gradient(120deg,#12365c 0%,#1c5d8c 70%,#2479a8 100%);co
 .logo{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:6px 12px;text-align:center;line-height:1.2;font-weight:800;letter-spacing:.5px}
 .logo small{display:block;font-weight:500;font-size:.7rem;opacity:.85;letter-spacing:0}
 .htitle h1{margin:0;font-size:1.3rem;font-weight:800;letter-spacing:-.2px}
-.htitle p{margin:2px 0 0;font-size:.82rem;opacity:.8}
+.htitle p{margin:4px auto 0;font-size:.82rem;opacity:.85;max-width:760px;line-height:1.5;word-break:keep-all}
 .htools{justify-self:end;display:flex;flex-wrap:nowrap;gap:6px;align-items:center;flex-wrap:wrap}
 .search{position:relative}
 .search input{border:0;border-radius:20px;padding:7px 14px 7px 32px;font:inherit;font-size:.88rem;width:230px;background:rgba(255,255,255,.95);color:var(--ink)}
@@ -204,7 +204,7 @@ mark{background:#fef08a;border-radius:2px}
 <body>
 <header><div class="hwrap">
   <div class="logo">KNUH<small>내분비대사내과</small></div>
-  <div class="htitle"><h1>타과 의뢰 회신 · 내분비 응급 프로토콜</h1><p>예상 의뢰별 회신 문안 (편집·복사·추가) 및 응급질환 처방·검사·추적 프로토콜</p></div>
+  <div class="htitle"><h1>타과 의뢰 회신 · 내분비 응급 프로토콜</h1><p>본 의뢰/회신 문안들과 프로토콜은 진료 보조용 초안이다. 환자별 신기능·동반질환·출혈/혈전 위험·약제 급여 기준과 원내 약제 수급 상황을 참고하여 반드시 담당의가 확인·수정하여 사용한다.</p></div>
   <div class="htools">
     <div class="search"><input id="q" placeholder="검색 (예: 데노수맙, DKA, 3%)" oninput="render()"></div>
     <button class="hbtn" onclick="openModal()">＋ 문안 추가</button>
@@ -230,8 +230,8 @@ mark{background:#fef08a;border-radius:2px}
   </div>
   <div id="main"></div>
   <div class="disc">
-    본 문안과 프로토콜은 진료 보조용 초안이다. 환자별 신기능·동반질환·출혈/혈전 위험·약제 급여 기준과 원내 프로토콜에 따라 반드시 담당의가 확인·수정하여 사용한다.<br>
-    주요 근거: ADA Standards of Care 2026 (Sec 6, 7, 9, 15, 16), ADA 2024 Hyperglycemic Crises consensus, JBDS-IP DKA/HHS guidelines, SfE/AAGBI 2020 perioperative glucocorticoid guideline, ESE/ES 2024 glucocorticoid-induced adrenal insufficiency guideline, Endocrine Society PAI 2016·PPGL 2014·hypoglycemia 2009·pituitary incidentaloma 2011·hypopituitarism 2016·hypercalcemia of malignancy 2023 guidelines, ESE 2023 adrenal incidentaloma guideline, ATA 2014 hypothyroidism·2016 hyperthyroidism guidelines, JTA/JES 2016 thyroid storm guideline, AAOMS 2022 MRONJ position paper, 5th International Workshop on PHPT 2022, 2nd International Workshop on Hypoparathyroidism 2022, European hyponatraemia guideline 2014, UKKA 2023 hyperkalaemia guideline, UK pituitary apoplexy guideline 2011, ESC 2022 non-cardiac surgery guideline, EHRA 2021 NOAC guide, KDIGO 2022/2024, ES/ESE 2025 pregnancy guideline, ASCO irAE guideline.
+    <b>주요 근거 문헌</b><br>
+    ADA Standards of Care 2026 (Sec 6, 7, 9, 15, 16), ADA 2024 Hyperglycemic Crises consensus, JBDS-IP DKA/HHS guidelines, SfE/AAGBI 2020 perioperative glucocorticoid guideline, ESE/ES 2024 glucocorticoid-induced adrenal insufficiency guideline, Endocrine Society PAI 2016·PPGL 2014·hypoglycemia 2009·pituitary incidentaloma 2011·hypopituitarism 2016·hypercalcemia of malignancy 2023 guidelines, ESE 2023 adrenal incidentaloma guideline, ATA 2014 hypothyroidism·2016 hyperthyroidism guidelines, JTA/JES 2016 thyroid storm guideline, AAOMS 2022 MRONJ position paper, 5th International Workshop on PHPT 2022, 2nd International Workshop on Hypoparathyroidism 2022, European hyponatraemia guideline 2014, UKKA 2023 hyperkalaemia guideline, UK pituitary apoplexy guideline 2011, ESC 2022 non-cardiac surgery guideline, EHRA 2021 NOAC guide, KDIGO 2022/2024, ES/ESE 2025 pregnancy guideline, ASCO irAE guideline.
   </div>
 </div>
 
