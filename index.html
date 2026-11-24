@@ -81,6 +81,7 @@ nav .inner{max-width:1200px;margin:0 auto;padding:8px 20px;display:flex;gap:6px;
 .calc label{font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;gap:2px;font-weight:600}
 .calc input,.calc select{color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 8px;font:inherit;font-size:.9rem;width:130px;background:var(--soft)}
 .calc input:focus,.calc select:focus{outline:2px solid var(--pri-l);border-color:var(--pri)}
+.calc select{width:auto;min-width:130px}
 .calc .out{background:var(--pri-l);border:1px solid #cfe0f2;border-radius:10px;padding:8px 12px;font-size:.88rem;flex:1;min-width:260px}
 .calc .out b{color:var(--pri);font-size:1.02em}
 /* ---------- reply items ---------- */
@@ -398,15 +399,16 @@ el:`<h3>빠른 계산 — 저나트륨혈증 수액 1 L 투여 시 예상 Na 변
   <option value="0.6">젊은 남성 (0.6)</option><option value="0.5" selected>젊은 여성·고령 남성 (0.5)</option><option value="0.45">고령 여성 (0.45)</option></select></label>
  <div class="out" id="naOut"></div>
 </div>
-<div style="font-size:.8rem;color:var(--muted)">공식은 소변 배설을 고려하지 않으므로 실제 교정 속도는 더 빠를 수 있음 (특히 저용적 교정·약제 중단·코티솔 보충 후 수분 이뇨). 교정 한도: 첫 24시간 ≤10 mmol/L, 이후 24시간마다 ≤8 mmol/L (삼투성 탈수초 고위험군은 ≤8 mmol/L/24h).</div>
-<h3 style="margin-top:12px">고칼륨혈증 응급 처치 요약 (UKKA 2023)</h3>
+<div style="font-size:.8rem;color:var(--muted)">공식은 소변 배설을 고려하지 않으므로 실제 교정 속도는 더 빠를 수 있음 (특히 저용적 교정·약제 중단·코티솔 보충 후 수분 이뇨). 교정 한도: 첫 24시간 ≤10 mmol/L, 이후 24시간마다 ≤8 mmol/L (삼투성 탈수초 고위험군은 ≤8 mmol/L/24h).</div>`,
+th:``,custom:``
+};
+
+const QREF_BEFORE={el4:`<h3>고칼륨혈증 응급 처치 요약 (UKKA 2023)</h3>
 <table><tr><th>단계</th><th>약제</th><th>발현 / 비고</th></tr>
 <tr><td>심근 보호 (K ≥6.5 또는 ECG 변화)</td><td>10% calcium gluconate 30 mL IV 10분</td><td>수분 내, 30–60분 지속 · ECG 변화 지속 시 반복</td></tr>
 <tr><td>세포내 이동</td><td>Regular insulin 10 units + glucose 25 g IV 15분<br>Salbutamol 10–20 mg nebulizer (보조)</td><td>15–30분 · 투여 전 혈당 &lt;126 mg/dL이면 D10W 50 mL/h 5시간 · 혈당 매시간 6시간</td></tr>
 <tr><td>체외 제거</td><td>Sodium zirconium cyclosilicate 10 g tid (≤72h)<br>Patiromer 8.4 g 1일 1회 / Calcium polystyrene sulfonate 15–30 g</td><td>1–4시간 이후 · 이뇨제(체액 과다 시) · 불응·AKI 시 투석</td></tr>
-<tr><td>추적</td><td>K 1, 2, 4, 6, 24시간</td><td>원인 약제 중단·조정</td></tr></table>`,
-th:``,custom:``
-};
+<tr><td>추적</td><td>K 1, 2, 4, 6, 24시간</td><td>원인 약제 중단·조정</td></tr></table>`};
 
 const ITEMS=[
 /* ---------------- 당뇨병 ---------------- */
@@ -1368,6 +1370,40 @@ reply:`상기 환자 ________ (SAH / TBI / 뇌수술 후) 중 저나트륨혈증
 pearls:['SAH 환자에서 수분 제한 → 지연성 허혈 위험 증가','Fludrocortisone: SAH 저나트륨혈증 예방 근거 일부'],
 ref:'Hoffman H et al. Hyponatremia in aneurysmal SAH (Neurocrit Care 2018); Spasovski G et al. 2014'},
 
+{id:'el2b',cat:'el',title:'고나트륨혈증 평가 및 교정 (요붕증 포함)',dept:'내과 병동, 중환자실, 신경외과, 요양병원 전원',
+req:'혈청 Na ___ mmol/L로 고나트륨혈증 소견입니다. 원인 평가 및 교정 부탁드립니다.',
+reply:`상기 환자 고나트륨혈증 (Na ___ mmol/L, 발생 시기: 급성(<48h) / 만성 / 불명, 의식 상태: ________)으로 의뢰 주셨습니다.
+
+[원인 평가]
+1. 체액 상태: 기립성 저혈압, 체중 변화, 피부 긴장도, 시간당 소변량
+2. 혈청 삼투압, 혈당, BUN/Cr, K, Ca
+3. 요 삼투압, 요 Na
+   - 요 삼투압 >600 mOsm/kg + 소변량 적음: 수분 섭취 부족, 신외 손실 (발열, 설사, 화상)
+   - 요 삼투압 <300 mOsm/kg + 다뇨 (>3 L/일): 요붕증 (중추성 / 신성)
+   - 요 삼투압 300–600 mOsm/kg: 삼투성 이뇨 (고혈당, mannitol, 고단백 경관영양), 부분 요붕증, loop 이뇨제
+4. 약제: lithium, loop 이뇨제, mannitol, 고장성 수액, NaHCO3
+5. 신성 요붕증 원인: 고칼슘혈증, 저칼륨혈증, lithium
+
+[치료]
+1. 저혈량·쇼크가 있으면 먼저 NS로 순환 회복
+2. 자유수 결손 = TBW × (Na/140 − 1)  (TBW = 체중 × 0.5–0.6) → 본 환자 약 ___ L
+3. 보충: 경구 또는 L-tube 물 우선, 정주 시 D5W (고혈당 시 0.45% NaCl)
+   - 투여량 = 결손량 + 지속 손실 (불감 손실 30–40 mL/h + 소변량)
+4. 교정 속도
+   - 만성 또는 발생 시점 불명: 24시간 Na 하강 ≤10 mmol/L
+   - 급성 (<48시간, 예: 수술 후 요붕증): 1 mmol/L/h까지 가능, Na 145 mmol/L 목표
+5. 모니터링: Na q2–4h (초기) → q4–6h, 섭취/배설량, 혈당 (D5W 고속 투여 시)
+6. 중추성 요붕증 의심 (다뇨 + 요 삼투압 <300 mOsm/kg)
+   - Desmopressin 1 mcg SC (정맥로만 있으면 IV, 1–2분에 걸쳐)
+   - 투여 후 요 삼투압 >50% 상승 시 중추성, 변화 없으면 신성 시사
+   - 재투여는 다뇨 재발 시, 투여 간격 최소 8시간, 투여 전 Na 확인
+7. 신성 요붕증: 원인 교정 (고칼슘·저칼륨 교정, lithium 조정), 필요 시 thiazide + 저염식
+8. 의식 저하로 갈증을 표현하지 못하는 환자는 일일 수분 투여량을 처방에 명시해 주십시오.
+
+본과에서 Na 추이를 확인하며 조정하겠습니다. (응급 프로토콜 "고나트륨혈증·중추성 요붕증"에 자유수 결손 계산기 있음)`,
+pearls:['만성 고나트륨혈증 급속 교정 → 뇌부종·경련','D5W 고속 투여 → 고혈당 → 삼투성 이뇨로 Na 재상승','고령·요양시설 환자의 갈증 장애·수분 접근 제한이 가장 흔한 원인','ACTH 결핍 동반 시 hydrocortisone 보충 후 요붕증이 드러날 수 있음 (masked DI)'],
+ref:'Adrogué HJ, Madias NE. Hypernatremia. NEJM 2000;342:1493; Sterns RH. Disorders of plasma sodium. NEJM 2015;372:55'},
+
 {id:'el4',cat:'el',title:'고칼륨혈증 응급 처치',dept:'응급의학과, 내과 병동, 외과계',
 req:'혈청 K ___ mmol/L로 고칼륨혈증 소견입니다. 처치 부탁드립니다.',
 reply:`상기 환자 고칼륨혈증 (K ___ mmol/L, ECG: ________, Cr ___, HCO3 ___, 혈당 ___)으로 의뢰 주셨습니다.
@@ -1974,7 +2010,7 @@ function render(){
     any=true;
     h+=`<div class="cathead" style="--c:${c.color}"><span class="cic">${ICON[c.id]||''}</span><div><h2>${c.name}</h2><span class="cnt">회신 문안 ${list.length}개</span></div></div>`;
     if(showQ) h+=`<div class="qref" style="--c:${c.color}">${QREF[c.id]}</div>`;
-    list.forEach(it=>{h+=itemHTML(it,c,q)});
+    list.forEach(it=>{if(showQ&&QREF_BEFORE[it.id])h+=`<div class="qref" style="--c:${c.color}">${QREF_BEFORE[it.id]}</div>`;h+=itemHTML(it,c,q)});
   });
   if(q){const pm=PROTOS.filter(p=>JSON.stringify(p).toLowerCase().includes(q));
     if(pm.length){any=true;h=`<div class="cathead" style="--c:#c53030"><span class="cic">!</span><div><h2>응급 프로토콜 검색 결과</h2><span class="cnt">${pm.map(p=>`<a href="#" onclick="openProto('${p.id}');return false" style="color:#c53030;font-weight:600;margin-right:10px">${p.name}</a>`).join('')}</span></div></div>`+h}}
