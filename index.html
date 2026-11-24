@@ -2110,11 +2110,9 @@ function calcNa(){
 
 /* abbreviation lookup box */
 function abMatch(q){q=q.trim().toLowerCase();if(!q)return [];
-  const ex=[],pre=[],inc=[];
-  ABBR.forEach(a=>{const k=a.k.toLowerCase();
-    if(k===q||(a.k==='q○h'&&/^q\d/.test(q)))ex.push(a);else if(k.startsWith(q))pre.push(a);
-    else if(k.includes(q)||a.v.toLowerCase().includes(q))inc.push(a)});
-  return ex.concat(pre,inc).slice(0,14)}
+  return ABBR.filter(a=>{const k=a.k.toLowerCase(),k2=k.replace(/^[^a-z]+/,'');
+    return k.startsWith(q)||k2.startsWith(q)||(a.k==='q○h'&&/^q\d*$/.test(q))})
+   .sort((a,b)=>a.k.length-b.k.length||a.k.localeCompare(b.k))}
 function abSearch(){const v=document.getElementById('ab').value,d=document.getElementById('adrop');
   const l=abMatch(v);
   if(!v.trim()){d.classList.remove('show');return}
