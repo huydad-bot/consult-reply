@@ -1975,8 +1975,7 @@ let edits=LS.get(K_EDIT,{}), custom=LS.get(K_CUST,[]);
 let settings=LS.get(K_SET,{useHead:true,useFoot:true,
   head:'의뢰해 주셔서 감사합니다.',
   foot:'추가 문의 사항 있으시면 재의뢰 부탁드립니다.\n경북대학교병원 내분비대사내과 ____ 드림'});
-let curCat=LS.get('consultReply.cat','emg'), curProto=LS.get('consultReply.proto','dka');
-if(curCat==='all')curCat='emg';
+let curCat='emg', curProto='dka';  // 실행 시 항상 '내분비 응급' 첫 프로토콜(DKA)에서 시작
 const ICON={dm:'DM',ad:'AD',op:'OP',ca:'Ca',ap:'AP',pit:'Pit',el:'Na·K',th:'Th',custom:'＋'};
 const STY={abbr:['약어','#64748b'],crit:['진단','#2b6cb0'],steps:['조치','#c53030'],labs:['검사','#6b46c1'],order:['처방','#1c4f82'],table:['표','#0f766e'],list:['추가','#b7791f'],calc:['계산','#2c7a7b'],ok:['해소·전환','#2f855a'],fu:['추적','#4a5568'],warn:['주의','#c53030']};
 
